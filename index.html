@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="High-performance WordPress & Elementor Pro Developer specializing in conversion-focused websites.">
+    <title>WP Expert | High-Performance Elementor Developer</title>
+
+    <!-- External Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: #e5e7eb;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #4ade80, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glow-button {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .glow-button:hover {
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        #audit-result-container:empty {
+            display: none;
+        }
+
+        @keyframes pulse-slow {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .loading-pulse {
+            animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1f2937;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b82f6;
+        }
+    </style>
+</head>
+
+<body class="selection:bg-blue-500/30">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-xl font-extrabold tracking-tighter flex items-center gap-2">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white">W</div>
+                <span>DEV<span class="text-blue-500">.</span></span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+                <a href="#work" class="hover:text-white transition">Work</a>
+                <a href="#performance" class="hover:text-white transition">The Stats</a>
+                <a href="#audit-tool" class="text-blue-400 font-bold hover:text-white transition">✨ Free AI Audit</a>
+                <a href="#contact-section"
+                    class="bg-white text-black px-5 py-2 rounded-full font-bold hover:bg-blue-500 hover:text-white transition">Book
+                    a Call</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-48 pb-24 px-6 overflow-hidden">
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-blue-600/10 blur-[120px] rounded-full -z-10">
+        </div>
+
+        <div class="max-w-5xl mx-auto text-center">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-8">
+                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                Elementor Pro Specialist
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1] text-white">
+                I build WordPress sites that <span class="text-gradient">actually convert.</span>
+            </h1>
+            <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+                Stop choosing between design and speed. I build lightning-fast, pixel-perfect Elementor experiences
+                designed to scale your business.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#audit-tool"
+                    class="glow-button bg-blue-600 text-white px-10 py-4 rounded-xl font-bold text-lg w-full sm:w-auto text-center">
+                    ✨ Get a Free AI Audit
+                </a>
+                <a href="#work"
+                    class="glass text-white px-10 py-4 rounded-xl font-bold text-lg w-full sm:w-auto border border-white/10 hover:bg-white/5 transition text-center">
+                    View My Work
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Gemini AI Audit Tool -->
+    <section id="audit-tool" class="py-24 px-6 relative bg-zinc-950/30">
+        <div class="max-w-4xl mx-auto">
+            <div class="glass p-8 md:p-12 rounded-[40px] border-blue-500/30 relative overflow-hidden">
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-blue-500/20 blur-[80px] rounded-full"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-2 bg-blue-500/20 rounded-lg text-blue-400">
+                            <i data-lucide="sparkles"></i>
+                        </div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-white">Magic Website Auditor</h2>
+                    </div>
+                    <p class="text-gray-400 mb-8">Paste your current website URL and describe your biggest frustration.
+                        My AI consultant will brainstorm a high-performance strategy for you instantly.</p>
+
+                    <div class="grid gap-4">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <input id="audit-url" type="text" placeholder="Your Website URL (e.g. yoursite.com)"
+                                class="bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-blue-500 transition">
+                            <select id="audit-issue"
+                                class="bg-zinc-900 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-blue-500 transition cursor-pointer">
+                                <option value="Low Loading Speed">Low Loading Speed</option>
+                                <option value="Low Conversion Rate">Low Conversion Rate</option>
+                                <option value="Outdated Design">Outdated Design</option>
+                                <option value="Hard to Manage/Edit">Hard to Manage/Edit</option>
+                            </select>
+                        </div>
+                        <button onclick="runAudit()" id="audit-btn"
+                            class="glow-button bg-white text-black font-bold py-4 rounded-xl text-lg flex items-center justify-center gap-2 hover:bg-blue-600 hover:text-white transition-colors duration-300">
+                            <span>✨ Generate My High-Performance Strategy</span>
+                        </button>
+                    </div>
+
+                    <!-- Result Area -->
+                    <div id="audit-loading" class="hidden mt-8 text-center text-blue-400 font-medium loading-pulse">
+                        Analyzing your site architecture and performance bottlenecks...
+                    </div>
+                    <div id="audit-result-container"
+                        class="mt-8 space-y-4 text-gray-300 leading-relaxed max-h-[400px] overflow-y-auto pr-4">
+                        <!-- Gemini content goes here -->
+                    </div>
+                    <div id="audit-error"
+                        class="hidden mt-4 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm text-center">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Bar -->
+    <section class="py-12 border-y border-white/5 bg-zinc-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-center text-gray-500 text-sm font-semibold uppercase tracking-widest mb-8">Powering results
+                for brands like</p>
+            <div
+                class="flex flex-wrap justify-center gap-12 md:gap-24 opacity-30 grayscale hover:grayscale-0 transition duration-500">
+                <div class="text-2xl font-black tracking-tighter text-white">TECHCORP</div>
+                <div class="text-2xl font-black tracking-tighter text-white">LUMINA</div>
+                <div class="text-2xl font-black tracking-tighter text-white">FLOWSTATE</div>
+                <div class="text-2xl font-black tracking-tighter text-white">NEXUS</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Stats -->
+    <section id="performance" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">Why Clients Hire Me</h2>
+                <p class="text-gray-400 max-w-xl mx-auto">I specialize in Elementor Pro builds that outperform
+                    traditional drag-and-drop sites.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-12 rounded-3xl text-center border-t-2 border-green-500/50 card-hover transition">
+                    <div
+                        class="w-14 h-14 bg-green-500/20 text-green-400 rounded-xl flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <div class="text-5xl font-bold text-white mb-2">95+</div>
+                    <p class="text-gray-400 font-medium uppercase text-xs tracking-widest">PageSpeed Score</p>
+                </div>
+                <div class="glass p-12 rounded-3xl text-center border-t-2 border-blue-500/50 card-hover transition">
+                    <div
+                        class="w-14 h-14 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="trending-up"></i>
+                    </div>
+                    <div class="text-5xl font-bold text-white mb-2">2x</div>
+                    <p class="text-gray-400 font-medium uppercase text-xs tracking-widest">Conversion Rate Avg.</p>
+                </div>
+                <div class="glass p-12 rounded-3xl text-center border-t-2 border-purple-500/50 card-hover transition">
+                    <div
+                        class="w-14 h-14 bg-purple-500/20 text-purple-400 rounded-xl flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="code-2"></i>
+                    </div>
+                    <div class="text-5xl font-bold text-white mb-2">0</div>
+                    <p class="text-gray-400 font-medium uppercase text-xs tracking-widest">Plugin Overload</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Wins Showcase -->
+    <section id="work" class="py-32 px-6 bg-zinc-950/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-4">
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">Recent Wins</h2>
+                    <p class="text-gray-400">Real results for scaling businesses.</p>
+                </div>
+                <a href="#contact-section"
+                    class="text-blue-400 font-bold hover:text-blue-300 transition flex items-center gap-2">
+                    Request Portfolio Deck <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-16">
+                <!-- Case Study 1 -->
+                <div class="group cursor-pointer">
+                    <div
+                        class="relative overflow-hidden rounded-[40px] aspect-video bg-zinc-900 border border-white/5 mb-8">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-black/90 flex items-center justify-center p-12">
+                            <div class="text-center">
+                                <span class="block text-white/10 font-black text-6xl uppercase italic">SaaS</span>
+                                <p class="text-white/60 font-medium mt-2">Custom Dashboard Integration</p>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute bottom-6 left-6 glass px-6 py-3 rounded-2xl text-sm font-bold text-green-400 flex items-center gap-2">
+                            <i data-lucide="gauge" class="w-5 h-5"></i>
+                            +40% Load Speed
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">Modern SaaS
+                        Landing Page</h3>
+                    <p class="text-gray-400 leading-relaxed">A high-conversion build using Elementor Pro + JetEngine for
+                        dynamic feature comparisons and custom data grids.</p>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="group cursor-pointer">
+                    <div
+                        class="relative overflow-hidden rounded-[40px] aspect-video bg-zinc-900 border border-white/5 mb-8">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-black/90 flex items-center justify-center p-12">
+                            <div class="text-center">
+                                <span class="block text-white/10 font-black text-6xl uppercase italic">SHOP</span>
+                                <p class="text-white/60 font-medium mt-2">D2C E-commerce Experience</p>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute bottom-6 left-6 glass px-6 py-3 rounded-2xl text-sm font-bold text-green-400 flex items-center gap-2">
+                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                            22% Sales Lift
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">Luxury
+                        E-commerce Redesign</h3>
+                    <p class="text-gray-400 leading-relaxed">Focusing on mobile conversion rates using Elementor's Loop
+                        Builder and a custom AJAX checkout flow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="glass p-12 md:p-24 rounded-[60px] relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 blur-[150px] rounded-full"></div>
+
+                <div class="relative z-10 grid lg:grid-cols-2 gap-20">
+                    <div>
+                        <h2 class="text-4xl md:text-6xl font-bold mb-8 text-white leading-tight">Beyond the <br>Drag &
+                            Drop.</h2>
+                        <p class="text-xl text-gray-400 mb-12 leading-relaxed max-w-md">
+                            I don't just "design" in Elementor. I use it as a framework to build high-performance tools
+                            that work for your business.
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0">
+                                    <i data-lucide="layers" class="w-5 h-5 text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-lg">Dynamic Infrastructure</h4>
+                                    <p class="text-gray-500 text-sm">Building custom post types, taxonomies, and
+                                        meta-fields for manageable data.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0">
+                                    <i data-lucide="zap" class="w-5 h-5 text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-lg">Asset Optimization</h4>
+                                    <p class="text-gray-500 text-sm">Stripping theme bloat and optimizing DOM depth for
+                                        Core Web Vitals.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid gap-6">
+                        <div
+                            class="bg-white/5 p-8 rounded-3xl border border-white/5 hover:border-blue-500/30 transition duration-300">
+                            <h4 class="font-bold text-xl mb-3 text-white">Technical WordPress Dev</h4>
+                            <p class="text-gray-400">Zero-bloat architecture using Hello Elementor and custom code
+                                snippets instead of 20+ plugins.</p>
+                        </div>
+                        <div
+                            class="bg-white/5 p-8 rounded-3xl border border-white/5 hover:border-blue-500/30 transition duration-300">
+                            <h4 class="font-bold text-xl mb-3 text-white">Figma to Elementor Pro</h4>
+                            <p class="text-gray-400">Pixel-perfect translations using Flexbox containers and Grid for
+                                truly responsive experiences.</p>
+                        </div>
+                        <div
+                            class="bg-white/5 p-8 rounded-3xl border border-white/5 hover:border-blue-500/30 transition duration-300">
+                            <h4 class="font-bold text-xl mb-3 text-white">Conversion Audit & Fix</h4>
+                            <p class="text-gray-400">Deep-dive performance fixes for existing Elementor sites that are
+                                sluggish or failing to convert.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Consultant UI -->
+    <div class="fixed bottom-8 right-8 z-[100]">
+        <div id="ai-chat-box"
+            class="hidden absolute bottom-24 right-0 w-80 md:w-96 glass rounded-3xl p-8 border-blue-500/30 shadow-2xl">
+            <h4 class="text-white font-bold mb-2 flex items-center gap-2">
+                <i data-lucide="bot" class="w-6 h-6 text-blue-400"></i> Tech Consultant
+            </h4>
+            <p class="text-xs text-gray-400 mb-6 italic border-b border-white/5 pb-4">Ask me about speed, SEO, or
+                Elementor best practices.</p>
+            <div id="ai-chat-history" class="text-sm text-gray-300 max-h-72 overflow-y-auto mb-6 space-y-4 pr-2">
+                <div class="bg-white/5 p-4 rounded-2xl">Hello! I can explain technical concepts in business terms. What
+                    are you looking to build?</div>
+            </div>
+            <div class="flex gap-2 bg-black/40 p-2 rounded-2xl border border-white/10">
+                <input id="ai-chat-input" type="text" placeholder="Type your question..."
+                    class="w-full bg-transparent border-none px-3 py-2 text-sm text-white focus:outline-none">
+                <button onclick="askConsultant()"
+                    class="bg-blue-600 p-3 rounded-xl text-white hover:bg-blue-500 transition shadow-lg">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+        <button onclick="toggleAIChat()"
+            class="glow-button w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-105 active:scale-95 transition-all">
+            <i data-lucide="message-square" id="chat-icon" class="w-8 h-8"></i>
+            <i data-lucide="x" id="close-icon" class="hidden w-8 h-8"></i>
+        </button>
+    </div>
+
+    <!-- Final CTA -->
+    <section id="contact-section" class="py-32 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-7xl font-extrabold mb-8 tracking-tighter text-white">Ready to <span
+                    class="text-gradient">convert?</span></h2>
+            <p class="text-xl text-gray-400 mb-16 leading-relaxed max-w-2xl mx-auto">
+                I help 1-2 scaling companies per month build high-end WordPress infrastructure. Let's see if your
+                project is a fit.
+            </p>
+            <div class="glass p-8 md:p-16 rounded-[60px] border border-blue-500/20 text-left">
+                <form class="grid gap-6">
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase text-gray-500 tracking-widest ml-1">Name</label>
+                            <input type="text" placeholder="John Doe"
+                                class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-blue-500 transition">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase text-gray-500 tracking-widest ml-1">Work
+                                Email</label>
+                            <input type="email" placeholder="john@company.com"
+                                class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-blue-500 transition">
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase text-gray-500 tracking-widest ml-1">Project
+                            Overview</label>
+                        <textarea rows="5" placeholder="Tell me about your business goals..."
+                            class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-blue-500 transition"></textarea>
+                    </div>
+                    <button type="button"
+                        class="glow-button bg-blue-600 text-white font-bold py-6 rounded-2xl text-xl mt-4 w-full flex items-center justify-center gap-3">
+                        Submit Project Brief <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-6 border-t border-white/5 bg-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-12 mb-12">
+                <div class="text-2xl font-black tracking-tighter flex items-center gap-2">
+                    <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white">W</div>
+                    <span>DEV<span class="text-blue-500">.</span></span>
+                </div>
+                <div
+                    class="flex flex-wrap justify-center gap-10 text-sm font-semibold uppercase tracking-widest text-gray-500">
+                    <a href="#work" class="hover:text-white transition">Portfolio</a>
+                    <a href="#performance" class="hover:text-white transition">Methodology</a>
+                    <a href="#services" class="hover:text-white transition">Expertise</a>
+                    <a href="mailto:hello@wp-expert.pro" class="hover:text-white transition">Email Me</a>
+                </div>
+            </div>
+            <div
+                class="flex flex-col md:flex-row justify-between items-center gap-6 pt-12 border-t border-white/5 text-sm text-gray-600">
+                <p>© 2024 Optimized WordPress Experience. No templates, just performance.</p>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="hover:text-blue-500 transition"><i data-lucide="github" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-blue-500 transition"><i data-lucide="linkedin"
+                            class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Logic Script -->
+    <script>
+        // Configuration
+        const apiKey = ""; // Set to empty as per instruction
+        const modelName = "gemini-2.5-flash-preview-09-2025";
+
+        // Init Icons
+        lucide.createIcons();
+
+        // UI Management
+        function toggleAIChat() {
+            const chatBox = document.getElementById('ai-chat-box');
+            const chatIcon = document.getElementById('chat-icon');
+            const closeIcon = document.getElementById('close-icon');
+            chatBox.classList.toggle('hidden');
+            chatIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        }
+
+        // Gemini API Caller with Exponential Backoff
+        async function callGemini(payload, retries = 5, delay = 1000) {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
+
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) throw new Error(`API: ${response.status}`);
+
+                    const data = await response.json();
+                    return data.candidates?.[0]?.content?.parts?.[0]?.text;
+                } catch (error) {
+                    if (i === retries - 1) throw error;
+                    await new Promise(r => setTimeout(r, delay));
+                    delay *= 2;
+                }
+            }
+        }
+
+        // ✨ FEATURE 1: Magic Website Audit
+        async function runAudit() {
+            const urlInput = document.getElementById('audit-url').value;
+            const issueSelect = document.getElementById('audit-issue').value;
+            const btn = document.getElementById('audit-btn');
+            const loader = document.getElementById('audit-loading');
+            const resultContainer = document.getElementById('audit-result-container');
+            const errorContainer = document.getElementById('audit-error');
+
+            if (!urlInput) {
+                errorContainer.textContent = "Error: Please enter a valid URL to analyze.";
+                errorContainer.classList.remove('hidden');
+                return;
+            }
+
+            errorContainer.classList.add('hidden');
+            btn.disabled = true;
+            loader.classList.remove('hidden');
+            resultContainer.innerHTML = '';
+
+            const systemPrompt = "You are a World-Class Technical SEO and WordPress Performance Architect. Provide a high-impact technical audit strategy. Keep it professional and focus on how Elementor Pro optimization can solve their specific problem. Use bullet points.";
+            const userPrompt = `Technical Audit Request: URL: ${urlInput}, Core Pain Point: ${issueSelect}. Suggest 3-4 professional improvements.`;
+
+            try {
+                const result = await callGemini({
+                    contents: [{ parts: [{ text: userPrompt }] }],
+                    systemInstruction: { parts: [{ text: systemPrompt }] }
+                });
+
+                const formatted = result.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                resultContainer.innerHTML = `
+                    <div class="bg-blue-600/10 p-8 rounded-[32px] border border-blue-500/20">
+                        <div class="flex items-center gap-2 text-blue-400 font-bold mb-4 uppercase text-xs tracking-widest">
+                            <i data-lucide="check-circle" class="w-4 h-4"></i> Analysis for ${urlInput}
+                        </div>
+                        ${formatted}
+                    </div>`;
+                lucide.createIcons();
+            } catch (err) {
+                errorContainer.textContent = "AI module temporarily offline. Please refresh or try again later.";
+                errorContainer.classList.remove('hidden');
+            } finally {
+                btn.disabled = false;
+                loader.classList.add('hidden');
+            }
+        }
+
+        // ✨ FEATURE 2: AI Tech Assistant Chat
+        async function askConsultant() {
+            const input = document.getElementById('ai-chat-input');
+            const history = document.getElementById('ai-chat-history');
+            const question = input.value.trim();
+
+            if (!question) return;
+
+            // Log User Message
+            const userDiv = document.createElement('div');
+            userDiv.className = "bg-blue-600/20 p-4 rounded-2xl text-xs self-end mb-2 ml-auto max-w-[80%]";
+            userDiv.textContent = question;
+            history.appendChild(userDiv);
+            input.value = '';
+            history.scrollTop = history.scrollHeight;
+
+            const systemPrompt = "You are a technical consultant for a high-end WordPress developer. Explain technical terms like 'Lazy Loading', 'Caching', 'PHP 8.3', 'FCP', and 'LCP' in ways that a business owner would care about (saving money, getting customers). Max 50 words.";
+
+            try {
+                const answer = await callGemini({
+                    contents: [{ parts: [{ text: question }] }],
+                    systemInstruction: { parts: [{ text: systemPrompt }] }
+                });
+
+                const aiDiv = document.createElement('div');
+                aiDiv.className = "bg-white/5 p-4 rounded-2xl border border-white/10 mb-2 italic text-sm";
+                aiDiv.textContent = answer;
+                history.appendChild(aiDiv);
+            } catch (err) {
+                const errorDiv = document.createElement('div');
+                errorDiv.className = "text-red-400 text-xs mt-1 p-2";
+                errorDiv.textContent = "Consultant is busy. Try again!";
+                history.appendChild(errorDiv);
+            }
+            history.scrollTop = history.scrollHeight;
+        }
+
+        // Enter key listeners
+        document.getElementById('ai-chat-input').addEventListener('keypress', (e) => e.key === 'Enter' && askConsultant());
+
+        // Viewport Reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(s => {
+            s.style.transition = "all 0.8s ease-out";
+            s.style.opacity = "0";
+            s.style.transform = "translateY(30px)";
+            observer.observe(s);
+        });
+    </script>
+</body>
+
+</html>
