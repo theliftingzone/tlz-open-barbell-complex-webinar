@@ -91,8 +91,8 @@
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
                 <a href="#about" class="hover:text-white transition">About</a>
-                <a href="#work" class="hover:text-white transition">Portfolio</a>
                 <a href="#services" class="hover:text-white transition">Services</a>
+                <a href="#work" class="hover:text-white transition">Portfolio</a>
                 <a href="#audit-tool" class="text-blue-400 font-bold hover:text-white transition">✨ Free Audit</a>
                 <a href="#contact-section" class="bg-white text-black px-5 py-2 rounded-full font-bold hover:bg-blue-500 hover:text-white transition">Work With Me</a>
             </div>
@@ -106,8 +106,8 @@
         <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-black/95 backdrop-blur-xl border-b border-white/10 p-8 flex flex-col gap-6 text-center shadow-2xl h-screen z-40 transition-all">
             <a href="#about" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white font-medium text-lg">About Me</a>
-            <a href="#work" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white font-medium text-lg">Portfolio</a>
             <a href="#services" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white font-medium text-lg">Services</a>
+            <a href="#work" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white font-medium text-lg">Portfolio</a>
             <a href="#audit-tool" onclick="toggleMobileMenu()" class="text-blue-400 font-bold text-lg">✨ Free Audit</a>
             <a href="#contact-section" onclick="toggleMobileMenu()" class="bg-white text-black px-5 py-3 rounded-xl font-bold hover:bg-blue-500 hover:text-white transition mx-auto w-full max-w-xs">Work With Me</a>
         </div>
@@ -223,13 +223,14 @@
                 <div class="relative group">
                     <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div class="relative bg-zinc-900 rounded-[2rem] p-1 border border-white/10 overflow-hidden aspect-[4/3] flex items-center justify-center">
-                
+                      
+                       
                         <img src="assets/me.jpg" alt="DRANO" class="w-full h-full object-cover rounded-[1.8rem]"> 
-                    
+                        
                     </div>
                 </div>
             </div>
-            <div class="w-full md:w-1/2">
+            <div class="w-full md:w-1/2 text-center md:text-left">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white text-xs font-bold uppercase tracking-widest mb-6">
                     <i data-lucide="handshake" class="w-4 h-4 text-blue-400"></i>
                     More Than A Developer
@@ -244,7 +245,7 @@
                     When we work together, you don't get a "yes-man" who blindly installs what you ask for. You get a technical consultant who cares as much about your business success as you do.
                 </p>
                 
-                <div class="flex flex-wrap gap-4">
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
                     <div class="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-lg border border-white/5">
                         <i data-lucide="check" class="w-4 h-4 text-green-400"></i>
                         <span class="text-sm font-medium text-white">Proactive Communication</span>
@@ -272,8 +273,8 @@
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 1 -->
-                <div class="glass p-10 rounded-3xl border border-white/5 card-hover transition">
-                    <div class="w-12 h-12 bg-green-500/20 text-green-400 rounded-xl flex items-center justify-center mb-6">
+                <div class="glass p-10 rounded-3xl border border-white/5 card-hover transition text-center md:text-left">
+                    <div class="w-12 h-12 bg-green-500/20 text-green-400 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0">
                         <i data-lucide="zap"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Extreme Speed</h3>
@@ -281,8 +282,8 @@
                 </div>
                 
                 <!-- Service 2 -->
-                <div class="glass p-10 rounded-3xl border border-white/5 card-hover transition">
-                    <div class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center mb-6">
+                <div class="glass p-10 rounded-3xl border border-white/5 card-hover transition text-center md:text-left">
+                    <div class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0">
                         <i data-lucide="shield-check"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Solid Security</h3>
@@ -290,8 +291,8 @@
                 </div>
 
                 <!-- Service 3 -->
-                <div class="glass p-10 rounded-3xl border border-white/5 card-hover transition">
-                    <div class="w-12 h-12 bg-purple-500/20 text-purple-400 rounded-xl flex items-center justify-center mb-6">
+                <div class="glass p-10 rounded-3xl border border-white/5 card-hover transition text-center md:text-left">
+                    <div class="w-12 h-12 bg-purple-500/20 text-purple-400 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0">
                         <i data-lucide="edit-3"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Custom Fields (ACF)</h3>
@@ -299,8 +300,8 @@
                 </div>
 
                 <!-- Service 4 -->
-                <div class="glass p-10 rounded-3xl border border-white/5 card-hover transition">
-                    <div class="w-12 h-12 bg-orange-500/20 text-orange-400 rounded-xl flex items-center justify-center mb-6">
+                <div class="glass p-10 rounded-3xl border border-white/5 card-hover transition text-center md:text-left">
+                    <div class="w-12 h-12 bg-orange-500/20 text-orange-400 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0">
                         <i data-lucide="map-pin"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Technical & Local SEO</h3>
@@ -308,8 +309,8 @@
                 </div>
 
                 <!-- Service 5 -->
-                <div class="glass p-10 rounded-3xl border border-white/5 card-hover transition">
-                    <div class="w-12 h-12 bg-pink-500/20 text-pink-400 rounded-xl flex items-center justify-center mb-6">
+                <div class="glass p-10 rounded-3xl border border-white/5 card-hover transition text-center md:text-left">
+                    <div class="w-12 h-12 bg-pink-500/20 text-pink-400 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0">
                         <i data-lucide="brush"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Elementor Pro Mastery</h3>
@@ -317,8 +318,8 @@
                 </div>
 
                 <!-- Service 6 -->
-                <div class="glass p-10 rounded-3xl border border-white/5 card-hover transition">
-                    <div class="w-12 h-12 bg-yellow-500/20 text-yellow-400 rounded-xl flex items-center justify-center mb-6">
+                <div class="glass p-10 rounded-3xl border border-white/5 card-hover transition text-center md:text-left">
+                    <div class="w-12 h-12 bg-yellow-500/20 text-yellow-400 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0">
                         <i data-lucide="wrench"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Maintenance & Support</h3>
@@ -486,9 +487,11 @@
                     <span class="text-blue-500 font-mono text-lg tracking-normal">&lt;web/&gt;</span>
                 </div>
                 <div class="flex flex-wrap justify-center gap-10 text-sm font-semibold uppercase tracking-widest text-gray-500">
-                    <a href="#work" class="hover:text-white transition">Portfolio</a>
+                    <a href="#about" class="hover:text-white transition">About</a>
                     <a href="#services" class="hover:text-white transition">Services</a>
-                    <a href="mailto:hello@drano.web" class="hover:text-white transition">Contact</a>
+                    <a href="#work" class="hover:text-white transition">Portfolio</a>
+                    <a href="#audit-tool" class="hover:text-blue-400 transition">Free Audit</a>
+                    <a href="#contact-section" class="hover:text-white transition">Contact</a>
                 </div>
             </div>
             <div class="flex flex-col md:flex-row justify-between items-center gap-6 pt-12 border-t border-white/5 text-sm text-gray-600">
@@ -503,7 +506,8 @@
 
     <!-- Scripts -->
     <script>
-
+        // PASTE YOUR API KEY HERE
+        // SAFETY TIP: Restrict this key in Google Cloud Console to only work on your domain (HTTP Referrer)
         const apiKey = "AIzaSyAemBwIPCXmIjF6lxf3LEburSbLIsewfXE"; 
         const modelName = "gemini-2.5-flash-preview-09-2025";
         
