@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Drano Web Solutions | Fast, clear, and high-trust websites that help local businesses get calls, inquiries, and real leads. Built with WordPress for flexibility and easy updates.">
-    <meta name="keywords"
-        content="Drano Web Solutions, local business websites, WordPress development, website design, website development">
-    <title>Drano Web Solutions | Local Business Websites that Drive Calls & Inquiries</title>
+    <meta name="description" content="DRANO | Professional WordPress Developer specializing in Speed, Security, and SEO-optimized business websites.">
+    <title>DRANO | Professional WordPress Developer</title>
+    
+    <!-- External Dependencies -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -57,17 +55,9 @@
         }
 
         @keyframes pulse-slow {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.5;
-            }
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
-
         .loading-pulse {
             animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
@@ -76,22 +66,18 @@
         ::-webkit-scrollbar {
             width: 8px;
         }
-
         ::-webkit-scrollbar-track {
             background: #050505;
         }
-
         ::-webkit-scrollbar-thumb {
             background: #1f2937;
             border-radius: 10px;
         }
-
         ::-webkit-scrollbar-thumb:hover {
             background: #3b82f6;
         }
     </style>
 </head>
-
 <body class="selection:bg-blue-500/30">
 
     <!-- Navbar -->
@@ -101,16 +87,14 @@
                 <span class="text-white">DRANO</span>
                 <span class="text-blue-500 font-mono text-lg">&lt;web/&gt;</span>
             </div>
-
+            
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
                 <a href="#about" class="hover:text-white transition">About</a>
                 <a href="#services" class="hover:text-white transition">Services</a>
                 <a href="#work" class="hover:text-white transition">Portfolio</a>
                 <a href="#audit-tool" class="text-blue-400 font-bold hover:text-white transition">✨ Free Audit</a>
-                <a href="#contact-section"
-                    class="bg-white text-black px-5 py-2 rounded-full font-bold hover:bg-blue-500 hover:text-white transition">Work
-                    With Me</a>
+                <a href="#contact-section" class="bg-white text-black px-5 py-2 rounded-full font-bold hover:bg-blue-500 hover:text-white transition">Work With Me</a>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -120,47 +104,36 @@
         </div>
 
         <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu"
-            class="hidden md:hidden absolute top-20 left-0 w-full bg-black/95 backdrop-blur-xl border-b border-white/10 p-8 flex flex-col gap-6 text-center shadow-2xl h-screen z-40 transition-all">
-            <a href="#about" onclick="toggleMobileMenu()"
-                class="text-gray-300 hover:text-white font-medium text-lg">About Me</a>
-            <a href="#services" onclick="toggleMobileMenu()"
-                class="text-gray-300 hover:text-white font-medium text-lg">Services</a>
-            <a href="#work" onclick="toggleMobileMenu()"
-                class="text-gray-300 hover:text-white font-medium text-lg">Portfolio</a>
+        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-black/95 backdrop-blur-xl border-b border-white/10 p-8 flex flex-col gap-6 text-center shadow-2xl h-screen z-40 transition-all">
+            <a href="#about" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white font-medium text-lg">About Me</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white font-medium text-lg">Services</a>
+            <a href="#work" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white font-medium text-lg">Portfolio</a>
             <a href="#audit-tool" onclick="toggleMobileMenu()" class="text-blue-400 font-bold text-lg">✨ Free Audit</a>
-            <a href="#contact-section" onclick="toggleMobileMenu()"
-                class="bg-white text-black px-5 py-3 rounded-xl font-bold hover:bg-blue-500 hover:text-white transition mx-auto w-full max-w-xs">Work
-                With Me</a>
+            <a href="#contact-section" onclick="toggleMobileMenu()" class="bg-white text-black px-5 py-3 rounded-xl font-bold hover:bg-blue-500 hover:text-white transition mx-auto w-full max-w-xs">Work With Me</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <header class="relative pt-48 pb-24 px-6 overflow-hidden">
-        <div
-            class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-blue-600/10 blur-[120px] rounded-full -z-10">
-        </div>
-
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-blue-600/10 blur-[120px] rounded-full -z-10"></div>
+        
         <div class="max-w-5xl mx-auto text-center">
-            <div
-                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-8">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-8">
                 <i data-lucide="layout" class="w-4 h-4"></i>
-                Fast, Clear, Contact-Ready Sites
+                WordPress Expert
             </div>
             <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1] text-white">
-                Websites that help local customers <span class="text-gradient">find you and contact you.</span>
+                I build WordPress sites that <span class="text-gradient">rank, load, and convert.</span>
             </h1>
             <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-                Fast, mobile-first websites built to bring in calls, inquiries, and real local leads.
+                No slow templates. No useless plugins. Just clean, optimized WordPress websites that help your business grow and beat the competition.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#audit-tool"
-                    class="glow-button bg-blue-600 text-white px-10 py-4 rounded-xl font-bold text-lg w-full sm:w-auto text-center">
-                    Get a Free Website Review
+                <a href="#audit-tool" class="glow-button bg-blue-600 text-white px-10 py-4 rounded-xl font-bold text-lg w-full sm:w-auto text-center">
+                    ✨ Get Your Free AI Site Audit
                 </a>
-                <a href="#work"
-                    class="glass text-white px-10 py-4 rounded-xl font-bold text-lg w-full sm:w-auto border border-white/10 hover:bg-white/5 transition text-center">
-                    View Local Business Projects
+                <a href="#work" class="glass text-white px-10 py-4 rounded-xl font-bold text-lg w-full sm:w-auto border border-white/10 hover:bg-white/5 transition text-center">
+                    See My Recent Work
                 </a>
             </div>
         </div>
@@ -176,63 +149,43 @@
                         <div class="p-2 bg-blue-500/20 rounded-lg text-blue-400">
                             <i data-lucide="sparkles"></i>
                         </div>
-                        <h2 class="text-2xl md:text-3xl font-bold text-white">Instant Website Check for Local Businesses
-                        </h2>
+                        <h2 class="text-2xl md:text-3xl font-bold text-white">Magic Website Auditor</h2>
                     </div>
-                    <p class="text-gray-400 mb-8">See how your website performs for real local customers. Find out what
-                        may be hurting your visibility, slowing your site down, or stopping people from contacting you.
-                        This quick check highlights practical issues based on real local business websites.</p>
-
+                    <p class="text-gray-400 mb-8">Is your website holding you back? Paste your URL below and my AI assistant will analyze your site for speed, SEO, and conversion gaps.</p>
+                    
                     <!-- Input Area -->
                     <div class="flex flex-col gap-4">
                         <div class="grid sm:grid-cols-2 gap-4">
-                            <!-- URL Input -->
-                            <input id="audit-url" type="text" placeholder="Website URL (e.g. yoursite.com)"
-                                class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-blue-500 transition">
-
-                            <!-- Industry Input (NEW: Fixes the precision issue) -->
-                            <input id="audit-industry" type="text" placeholder="Industry (e.g. Plumber, Wellness, Cafe)"
-                                class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-blue-500 transition">
+                            <input id="audit-url" type="text" placeholder="yoursite.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-blue-500 transition">
+                            
+                            <div class="relative w-full">
+                                <select id="audit-issue" class="w-full appearance-none bg-zinc-900 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-blue-500 transition cursor-pointer pr-12">
+                                    <option value="Low Loading Speed">My site is too slow</option>
+                                    <option value="Low Conversion Rate">I need more customers/leads</option>
+                                    <option value="Technical/Local SEO">I'm not showing up on Google</option>
+                                    <option value="Maintenance/Security">I'm worried about security/hacks</option>
+                                    <option value="Management">It's too hard to edit my content</option>
+                                </select>
+                                <i data-lucide="chevron-down" class="absolute right-6 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none w-5 h-5"></i>
+                            </div>
                         </div>
 
-                        <!-- Pain Point Dropdown -->
-                        <div class="relative w-full">
-                            <select id="audit-issue"
-                                class="w-full appearance-none bg-zinc-900 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-blue-500 transition cursor-pointer pr-12">
-                                <option value="" disabled selected>What is your biggest frustration?</option>
-                                <option value="Low Loading Speed">My site is too slow</option>
-                                <option value="Low Conversion Rate">I need more customers/leads</option>
-                                <option value="Technical/Local SEO">I'm not showing up on Google</option>
-                                <option value="Maintenance/Security">I'm worried about security/hacks</option>
-                                <option value="Management">It's too hard to edit my content</option>
-                            </select>
-                            <i data-lucide="chevron-down"
-                                class="absolute right-6 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none w-5 h-5"></i>
-                        </div>
-
-                        <button onclick="runAudit()" id="audit-btn"
-                            class="w-full glow-button bg-white text-black font-bold py-4 rounded-xl text-lg flex items-center justify-center gap-2 hover:bg-blue-600 hover:text-white transition-colors duration-300">
-                            <span>✨ Check My Website</span>
+                        <button onclick="runAudit()" id="audit-btn" class="w-full glow-button bg-white text-black font-bold py-4 rounded-xl text-lg flex items-center justify-center gap-2 hover:bg-blue-600 hover:text-white transition-colors duration-300">
+                            <span>✨ Generate My Growth Strategy</span>
                         </button>
-                        <p class="text-xs text-gray-500 text-center md:text-left italic">
-                            *AI audit tools can make mistakes. Please double-check the results.
-                        </p>
                     </div>
 
                     <!-- Result Area -->
                     <div id="audit-loading" class="hidden mt-8 text-center text-blue-400 font-medium loading-pulse">
                         Scanning your site structure and technical SEO...
                     </div>
-
+                    
                     <!-- Formatted Result Container -->
-                    <div id="audit-result-container"
-                        class="mt-8 text-gray-300 leading-relaxed overflow-hidden text-left">
+                    <div id="audit-result-container" class="mt-8 text-gray-300 leading-relaxed overflow-hidden text-left">
                         <!-- Gemini content will be injected here with custom styling -->
                     </div>
-
-                    <div id="audit-error"
-                        class="hidden mt-4 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm text-center">
-                    </div>
+                    
+                    <div id="audit-error" class="hidden mt-4 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm text-center"></div>
                 </div>
             </div>
         </div>
@@ -241,88 +194,20 @@
     <!-- Social Proof / Logos -->
     <section class="py-12 border-y border-white/5 bg-zinc-950">
         <div class="max-w-7xl mx-auto px-6">
-            <p class="text-center text-white text-lg font-bold uppercase tracking-widest mb-2">Trusted by local
-                businesses and growing teams</p>
-            <p class="text-center text-gray-500 text-sm font-medium mb-10 max-w-2xl mx-auto">Local service businesses,
-                startups, and teams that rely on their website to bring in real inquiries.</p>
-
-            <!-- 
-                GRID LAYOUT FOR 10 LOGOS:
-                - grid-cols-2: 2 logos per row on mobile (readable size)
-                - md:grid-cols-5: 5 logos per row on desktop (clean 2 rows)
-            -->
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-12 items-center">
-
-                <!-- Client 1 -->
-                <div
-                    class="flex justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
-                    <!-- <img src="assets/logo1.webp" alt="Client 1" class="h-8 md:h-12 w-auto object-contain"> -->
-                    <span class="text-xl md:text-2xl font-black text-white">LOGO 1</span>
+            <p class="text-center text-gray-500 text-sm font-semibold uppercase tracking-widest mb-8">Trusted by businesses for expert results</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale hover:grayscale-0 transition duration-500">
+                <div class="h-8 md:h-10 flex items-center">
+                    <span class="text-2xl font-black text-white">RETAILMAX</span>
                 </div>
-
-                <!-- Client 2 -->
-                <div
-                    class="flex justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
-                    <!-- <img src="assets/logo2.webp" alt="Client 2" class="h-8 md:h-12 w-auto object-contain"> -->
-                    <span class="text-xl md:text-2xl font-black text-white">LOGO 2</span>
+                <div class="h-8 md:h-10 flex items-center">
+                    <span class="text-2xl font-black text-white">HEALTHYCO</span>
                 </div>
-
-                <!-- Client 3 -->
-                <div
-                    class="flex justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
-                    <!-- <img src="assets/logo3.webp" alt="Client 3" class="h-8 md:h-12 w-auto object-contain"> -->
-                    <span class="text-xl md:text-2xl font-black text-white">LOGO 3</span>
+                <div class="h-8 md:h-10 flex items-center">
+                    <span class="text-2xl font-black text-white">LOCALSERVE</span>
                 </div>
-
-                <!-- Client 4 -->
-                <div
-                    class="flex justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
-                    <!-- <img src="assets/logo4.webp" alt="Client 4" class="h-8 md:h-12 w-auto object-contain"> -->
-                    <span class="text-xl md:text-2xl font-black text-white">LOGO 4</span>
+                <div class="h-8 md:h-10 flex items-center">
+                    <span class="text-2xl font-black text-white">URBANDEV</span>
                 </div>
-
-                <!-- Client 5 -->
-                <div
-                    class="flex justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
-                    <!-- <img src="assets/logo5.webp" alt="Client 5" class="h-8 md:h-12 w-auto object-contain"> -->
-                    <span class="text-xl md:text-2xl font-black text-white">LOGO 5</span>
-                </div>
-
-                <!-- Client 6 -->
-                <div
-                    class="flex justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
-                    <!-- <img src="assets/logo6.webp" alt="Client 6" class="h-8 md:h-12 w-auto object-contain"> -->
-                    <span class="text-xl md:text-2xl font-black text-white">LOGO 6</span>
-                </div>
-
-                <!-- Client 7 -->
-                <div
-                    class="flex justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
-                    <!-- <img src="assets/logo7.webp" alt="Client 7" class="h-8 md:h-12 w-auto object-contain"> -->
-                    <span class="text-xl md:text-2xl font-black text-white">LOGO 7</span>
-                </div>
-
-                <!-- Client 8 -->
-                <div
-                    class="flex justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
-                    <!-- <img src="assets/logo8.webp" alt="Client 8" class="h-8 md:h-12 w-auto object-contain"> -->
-                    <span class="text-xl md:text-2xl font-black text-white">LOGO 8</span>
-                </div>
-
-                <!-- Client 9 -->
-                <div
-                    class="flex justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
-                    <!-- <img src="assets/logo9.webp" alt="Client 9" class="h-8 md:h-12 w-auto object-contain"> -->
-                    <span class="text-xl md:text-2xl font-black text-white">LOGO 9</span>
-                </div>
-
-                <!-- Client 10 -->
-                <div
-                    class="flex justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
-                    <!-- <img src="assets/logo10.webp" alt="Client 10" class="h-8 md:h-12 w-auto object-contain"> -->
-                    <span class="text-xl md:text-2xl font-black text-white">LOGO 10</span>
-                </div>
-
             </div>
         </div>
     </section>
@@ -330,65 +215,49 @@
     <!-- About Me / Partner Section -->
     <section id="about" class="py-24 px-6 relative overflow-hidden">
         <!-- Background Elements -->
-        <div
-            class="absolute left-0 top-0 w-full h-full bg-gradient-to-b from-zinc-950 to-black pointer-events-none -z-10">
-        </div>
-        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-blue-900/10 blur-[100px] rounded-full -z-10">
-        </div>
+        <div class="absolute left-0 top-0 w-full h-full bg-gradient-to-b from-zinc-950 to-black pointer-events-none -z-10"></div>
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-blue-900/10 blur-[100px] rounded-full -z-10"></div>
 
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
             <div class="w-full md:w-1/2">
                 <div class="relative group">
-                    <div
-                        class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200">
-                    </div>
-                    <div
-                        class="relative bg-zinc-900 rounded-[2rem] p-1 border border-white/10 overflow-hidden aspect-[4/3] flex items-center justify-center">
-
-                        <img src="assets/me.webp" alt="Adrian Sembrano"
-                            class="w-full h-full object-cover rounded-[1.8rem]">
-
+                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                    <div class="relative bg-zinc-900 rounded-[2rem] p-1 border border-white/10 overflow-hidden aspect-[4/3] flex items-center justify-center">
+                    
+                        <img src="assets/me.jpg" alt="DRANO" class="w-full h-full object-cover rounded-[1.8rem]"> 
+                    
                     </div>
                 </div>
             </div>
             <div class="w-full md:w-1/2 text-center md:text-left">
-                <div
-                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white text-xs font-bold uppercase tracking-widest mb-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white text-xs font-bold uppercase tracking-widest mb-6">
                     <i data-lucide="handshake" class="w-4 h-4 text-blue-400"></i>
-                    A practical approach to local business websites
+                    More Than A Developer
                 </div>
                 <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
-                    Who you are <span class="text-gradient">working with.</span>
+                    Meet Your New <br><span class="text-gradient">Partner in Business.</span>
                 </h2>
                 <p class="text-gray-400 text-lg leading-relaxed mb-6">
-                    <strong class="text-white">Hi, I'm Adrian Sembrano.</strong> I help local businesses fix websites
-                    that are slow, confusing, or not bringing in inquiries. I am not here to upsell features or
-                    overcomplicate things. The goal is simple: help local customers find you, trust you, and contact
-                    you.
+                    I'm not just a coder. I'm a strategic partner who understands that a website is an investment, not an expense. While other developers focus on "themes" and "plugins," I focus on your <strong>ROI, User Experience, and Long-term Growth.</strong>
                 </p>
-                <p class="text-gray-400 text-lg leading-relaxed mb-6">
-                    I design and build websites that are:
+                <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                    When we work together, you don't get a "yes-man" who blindly installs what you ask for. You get a technical consultant who cares as much about your business success as you do.
                 </p>
-
-                <div class="flex flex-wrap gap-4 justify-center md:justify-start mb-8">
+                
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
                     <div class="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-lg border border-white/5">
                         <i data-lucide="check" class="w-4 h-4 text-green-400"></i>
-                        <span class="text-sm font-medium text-white">Clear & Easy to Navigate</span>
+                        <span class="text-sm font-medium text-white">Proactive Communication</span>
                     </div>
                     <div class="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-lg border border-white/5">
                         <i data-lucide="check" class="w-4 h-4 text-green-400"></i>
-                        <span class="text-sm font-medium text-white">Fast on Mobile</span>
+                        <span class="text-sm font-medium text-white">Business-First Logic</span>
                     </div>
                     <div class="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-lg border border-white/5">
                         <i data-lucide="check" class="w-4 h-4 text-green-400"></i>
-                        <span class="text-sm font-medium text-white">Structured for Calls</span>
+                        <span class="text-sm font-medium text-white">Long-term Support</span>
                     </div>
                 </div>
-
-                <p class="text-gray-400 text-lg leading-relaxed border-l-4 border-blue-600 pl-6 italic">
-                    "You work directly with me. No handoffs. No layers. Just clear communication and practical results.
-                    Small enough to care. Experienced enough to get it right."
-                </p>
             </div>
         </div>
     </section>
@@ -397,125 +266,82 @@
     <section id="services" class="py-32 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">What Your Website Is Built To Do</h2>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">The Total Package</h2>
+                <p class="text-gray-400 max-w-xl mx-auto">I specialize in everything a business website needs to succeed in today's digital landscape.</p>
             </div>
-
+            
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 1 -->
-                <div
-                    class="glass p-10 rounded-3xl border border-white/5 card-hover transition text-center md:text-left">
-                    <div
-                        class="w-12 h-12 bg-green-500/20 text-green-400 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0">
-                        <i data-lucide="smartphone"></i>
+                <div class="glass p-10 rounded-3xl border border-white/5 card-hover transition text-center md:text-left">
+                    <div class="w-12 h-12 bg-green-500/20 text-green-400 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0">
+                        <i data-lucide="zap"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Load Fast on Mobile</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Because most local customers search from their
-                        phones.</p>
+                    <h3 class="text-xl font-bold text-white mb-3">Extreme Speed</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">I optimize your site to hit 90+ PageSpeed scores. Fast sites keep customers from leaving and rank better on Google.</p>
                 </div>
-
+                
                 <!-- Service 2 -->
-                <div
-                    class="glass p-10 rounded-3xl border border-white/5 card-hover transition text-center md:text-left">
-                    <div
-                        class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0">
-                        <i data-lucide="phone-call"></i>
+                <div class="glass p-10 rounded-3xl border border-white/5 card-hover transition text-center md:text-left">
+                    <div class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0">
+                        <i data-lucide="shield-check"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Make Contact Obvious</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Clear buttons, forms, and layouts that encourage
-                        calls and inquiries.</p>
+                    <h3 class="text-xl font-bold text-white mb-3">Solid Security</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">I harden your WordPress installation against hacks, implement 24/7 monitoring, and ensure your data is always backed up.</p>
                 </div>
 
                 <!-- Service 3 -->
-                <div
-                    class="glass p-10 rounded-3xl border border-white/5 card-hover transition text-center md:text-left">
-                    <div
-                        class="w-12 h-12 bg-orange-500/20 text-orange-400 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0">
-                        <i data-lucide="map-pin"></i>
+                <div class="glass p-10 rounded-3xl border border-white/5 card-hover transition text-center md:text-left">
+                    <div class="w-12 h-12 bg-purple-500/20 text-purple-400 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0">
+                        <i data-lucide="edit-3"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Support Local Search Visibility</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Proper structure to help your business appear in
-                        local results.</p>
+                    <h3 class="text-xl font-bold text-white mb-3">Custom Fields (ACF)</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">I build custom dashboards that make it incredibly easy for you to update your site without accidentally breaking the layout.</p>
                 </div>
 
                 <!-- Service 4 -->
-                <div
-                    class="glass p-10 rounded-3xl border border-white/5 card-hover transition text-center md:text-left">
-                    <div
-                        class="w-12 h-12 bg-purple-500/20 text-purple-400 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0">
-                        <i data-lucide="edit-3"></i>
+                <div class="glass p-10 rounded-3xl border border-white/5 card-hover transition text-center md:text-left">
+                    <div class="w-12 h-12 bg-orange-500/20 text-orange-400 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0">
+                        <i data-lucide="map-pin"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Easy to Update</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Change services, text, or photos without breaking
-                        anything.</p>
+                    <h3 class="text-xl font-bold text-white mb-3">Technical & Local SEO</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">I set up your site so Google can read it perfectly. I focus on Local SEO to make sure customers in your area can find you first.</p>
                 </div>
 
                 <!-- Service 5 -->
-                <div
-                    class="glass p-10 rounded-3xl border border-white/5 card-hover transition text-center md:text-left">
-                    <div
-                        class="w-12 h-12 bg-pink-500/20 text-pink-400 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0">
-                        <i data-lucide="shield-check"></i>
+                <div class="glass p-10 rounded-3xl border border-white/5 card-hover transition text-center md:text-left">
+                    <div class="w-12 h-12 bg-pink-500/20 text-pink-400 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0">
+                        <i data-lucide="brush"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Reliable and Secure</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">A clean setup that stays stable over time.</p>
+                    <h3 class="text-xl font-bold text-white mb-3">Elementor Pro Mastery</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">I use Elementor to create stunning, pixel-perfect designs that look professional on desktop, tablet, and mobile devices.</p>
                 </div>
 
                 <!-- Service 6 -->
-                <div
-                    class="glass p-10 rounded-3xl border border-white/5 card-hover transition text-center md:text-left">
-                    <div
-                        class="w-12 h-12 bg-yellow-500/20 text-yellow-400 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0">
-                        <i data-lucide="life-buoy"></i>
+                <div class="glass p-10 rounded-3xl border border-white/5 card-hover transition text-center md:text-left">
+                    <div class="w-12 h-12 bg-yellow-500/20 text-yellow-400 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0">
+                        <i data-lucide="wrench"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Support When Needed</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Help after launch, without disappearing.</p>
+                    <h3 class="text-xl font-bold text-white mb-3">Maintenance & Support</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">I take care of all the technical updates, plugin patches, and server hosting so you can focus on running your business.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Performance Stats / Results -->
+    <!-- Performance Stats -->
     <section id="performance" class="py-24 px-6 bg-zinc-950/30 border-y border-white/5">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-white">Results that matter for local businesses.</h2>
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-center">
+            <div>
+                <div class="text-5xl font-bold text-white mb-2">95+</div>
+                <p class="text-blue-400 font-bold uppercase text-xs tracking-widest">PageSpeed Insight Avg.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-12 text-center">
-                <!-- Result 1 -->
-                <div class="flex flex-col items-center group">
-                    <div
-                        class="w-20 h-20 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 text-blue-400 group-hover:scale-110 transition duration-300 border border-blue-500/20">
-                        <i data-lucide="zap" class="w-10 h-10"></i>
-                    </div>
-                    <div class="text-4xl md:text-5xl font-bold text-white mb-4">Instant Speed</div>
-                    <p
-                        class="text-gray-400 font-bold uppercase text-xs tracking-widest leading-relaxed max-w-xs mx-auto">
-                        Stop losing mobile customers to slow loading</p>
-                </div>
-
-                <!-- Result 2 -->
-                <div class="flex flex-col items-center group">
-                    <div
-                        class="w-20 h-20 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 text-blue-400 group-hover:scale-110 transition duration-300 border border-blue-500/20">
-                        <i data-lucide="message-square" class="w-10 h-10"></i>
-                    </div>
-                    <div class="text-4xl md:text-5xl font-bold text-white mb-4">More Inquiries</div>
-                    <p
-                        class="text-gray-400 font-bold uppercase text-xs tracking-widest leading-relaxed max-w-xs mx-auto">
-                        Layouts designed to generate calls & emails</p>
-                </div>
-
-                <!-- Result 3 -->
-                <div class="flex flex-col items-center group">
-                    <div
-                        class="w-20 h-20 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 text-blue-400 group-hover:scale-110 transition duration-300 border border-blue-500/20">
-                        <i data-lucide="map-pin" class="w-10 h-10"></i>
-                    </div>
-                    <div class="text-4xl md:text-5xl font-bold text-white mb-4">Local Reach</div>
-                    <p
-                        class="text-gray-400 font-bold uppercase text-xs tracking-widest leading-relaxed max-w-xs mx-auto">
-                        Technical structure that helps you rank locally</p>
-                </div>
+            <div>
+                <div class="text-5xl font-bold text-white mb-2">100%</div>
+                <p class="text-blue-400 font-bold uppercase text-xs tracking-widest">Mobile Responsive Score</p>
+            </div>
+            <div>
+                <div class="text-5xl font-bold text-white mb-2">2x</div>
+                <p class="text-blue-400 font-bold uppercase text-xs tracking-widest">Faster Load Times</p>
             </div>
         </div>
     </section>
@@ -524,117 +350,69 @@
     <section id="work" class="py-32 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-20">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">Local business websites built for clarity and
-                    results.</h2>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">Recent Projects</h2>
+                <p class="text-gray-400">Real businesses. Real results. Better performance.</p>
             </div>
-
+            
             <div class="grid md:grid-cols-2 gap-12 md:gap-16">
                 <!-- Project 1: Advantage Plus Concreting -->
-                <a href="https://advantageplusconcreting.com.au/" target="_blank"
-                    class="group block text-center md:text-left">
-                    <div
-                        class="relative overflow-hidden rounded-[2rem] md:rounded-[40px] aspect-video bg-zinc-900 border border-white/5 mb-6 md:mb-8 group-hover:border-white/20 transition">
-
-                        <!-- PROJECT IMAGE: Uncomment line below and add your screenshot as WebP -->
-                        <img src="assets/APC.webp" alt="Advantage Plus Concreting"
-                            class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-105">
-
-                        <!-- Gradient Overlay -->
-                        <div
-                            class="absolute inset-0 bg-gradient-to-br from-orange-600/20 to-black/90 flex items-center justify-center p-6 md:p-12">
-                            <span
-                                class="text-white/10 font-black text-3xl md:text-4xl uppercase italic group-hover:text-white/20 transition duration-500">Concreting</span>
+                <a href="https://advantageplusconcreting.com.au/" target="_blank" class="group block text-center md:text-left">
+                    <div class="relative overflow-hidden rounded-[2rem] md:rounded-[40px] aspect-video bg-zinc-900 border border-white/5 mb-6 md:mb-8">
+                        <div class="absolute inset-0 bg-gradient-to-br from-orange-600/20 to-black/90 flex items-center justify-center p-6 md:p-12">
+                            <span class="text-white/10 font-black text-3xl md:text-4xl uppercase italic group-hover:text-white/20 transition duration-500">Concreting</span>
                         </div>
-
-                        <div
-                            class="absolute bottom-4 left-4 md:bottom-6 md:left-6 glass px-4 py-2 md:px-6 md:py-3 rounded-xl md:rounded-2xl text-xs md:text-sm font-bold text-orange-400 flex items-center gap-2">
+                        <div class="absolute bottom-4 left-4 md:bottom-6 md:left-6 glass px-4 py-2 md:px-6 md:py-3 rounded-xl md:rounded-2xl text-xs md:text-sm font-bold text-orange-400 flex items-center gap-2">
                             <i data-lucide="edit-3" class="w-4 h-4 md:w-5 md:h-5"></i>
-                            Simple & Clear
+                            Custom ACF Portfolio
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">Advantage Plus
-                        Concreting</h3>
-                    <p class="text-gray-400 leading-relaxed">Simplified structure for local customers with a custom
-                        portfolio system.</p>
+                    <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">Advantage Plus Concreting</h3>
+                    <p class="text-gray-400 leading-relaxed">Revamped legacy site with custom ACF integration, allowing the client to easily upload completed projects. Significant SEO ranking increase.</p>
                 </a>
 
                 <!-- Project 2: Elements Studio -->
                 <a href="https://elements-studio.com.au/" target="_blank" class="group block text-center md:text-left">
-                    <div
-                        class="relative overflow-hidden rounded-[2rem] md:rounded-[40px] aspect-video bg-zinc-900 border border-white/5 mb-6 md:mb-8 group-hover:border-white/20 transition">
-
-                        <!-- PROJECT IMAGE -->
-                        <img src="assets/elements-studio.webp" alt="Elements Studio"
-                            class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-105">
-
-                        <div
-                            class="absolute inset-0 bg-gradient-to-br from-pink-600/20 to-black/90 flex items-center justify-center p-6 md:p-12">
-                            <span
-                                class="text-white/10 font-black text-3xl md:text-4xl uppercase italic group-hover:text-white/20 transition duration-500">Studio</span>
+                    <div class="relative overflow-hidden rounded-[2rem] md:rounded-[40px] aspect-video bg-zinc-900 border border-white/5 mb-6 md:mb-8">
+                        <div class="absolute inset-0 bg-gradient-to-br from-pink-600/20 to-black/90 flex items-center justify-center p-6 md:p-12">
+                            <span class="text-white/10 font-black text-3xl md:text-4xl uppercase italic group-hover:text-white/20 transition duration-500">Studio</span>
                         </div>
-                        <div
-                            class="absolute bottom-4 left-4 md:bottom-6 md:left-6 glass px-4 py-2 md:px-6 md:py-3 rounded-xl md:rounded-2xl text-xs md:text-sm font-bold text-pink-400 flex items-center gap-2">
+                        <div class="absolute bottom-4 left-4 md:bottom-6 md:left-6 glass px-4 py-2 md:px-6 md:py-3 rounded-xl md:rounded-2xl text-xs md:text-sm font-bold text-pink-400 flex items-center gap-2">
                             <i data-lucide="smartphone" class="w-4 h-4 md:w-5 md:h-5"></i>
-                            Optimized for Speed
+                            Mobile Optimized
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">Elements Studio
-                    </h3>
-                    <p class="text-gray-400 leading-relaxed">Optimized for speed and usability, making it easy for
-                        customers to browse services.</p>
+                    <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">Elements Studio</h3>
+                    <p class="text-gray-400 leading-relaxed">Transformed a rigid, hard-to-edit site into a fully flexible WordPress build. Achieved 90+ PageSpeed scores and full mobile responsiveness.</p>
                 </a>
 
                 <!-- Project 3: Embod -->
                 <a href="https://embod.com.au" target="_blank" class="group block text-center md:text-left">
-                    <div
-                        class="relative overflow-hidden rounded-[2rem] md:rounded-[40px] aspect-video bg-zinc-900 border border-white/5 mb-6 md:mb-8 group-hover:border-white/20 transition">
-
-                        <!-- PROJECT IMAGE -->
-                        <img src="assets/embod.webp" alt="Embod East Brisbane"
-                            class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-105">
-
-                        <div
-                            class="absolute inset-0 bg-gradient-to-br from-emerald-600/20 to-black/90 flex items-center justify-center p-6 md:p-12">
-                            <span
-                                class="text-white/10 font-black text-3xl md:text-4xl uppercase italic group-hover:text-white/20 transition duration-500">Wellness</span>
+                    <div class="relative overflow-hidden rounded-[2rem] md:rounded-[40px] aspect-video bg-zinc-900 border border-white/5 mb-6 md:mb-8">
+                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-600/20 to-black/90 flex items-center justify-center p-6 md:p-12">
+                            <span class="text-white/10 font-black text-3xl md:text-4xl uppercase italic group-hover:text-white/20 transition duration-500">Embod</span>
                         </div>
-                        <div
-                            class="absolute bottom-4 left-4 md:bottom-6 md:left-6 glass px-4 py-2 md:px-6 md:py-3 rounded-xl md:rounded-2xl text-xs md:text-sm font-bold text-emerald-400 flex items-center gap-2">
+                        <div class="absolute bottom-4 left-4 md:bottom-6 md:left-6 glass px-4 py-2 md:px-6 md:py-3 rounded-xl md:rounded-2xl text-xs md:text-sm font-bold text-emerald-400 flex items-center gap-2">
                             <i data-lucide="trending-up" class="w-4 h-4 md:w-5 md:h-5"></i>
                             Visitor Growth
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">Embod Wellness
-                    </h3>
-                    <p class="text-gray-400 leading-relaxed">Complete overhaul for a health & wellness brand focusing on
-                        technical SEO and Core Web Vitals, resulting in a measurable increase in organic visitor
-                        traffic.</p>
+                    <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">Embod</h3>
+                    <p class="text-gray-400 leading-relaxed">Complete website overhaul focusing on technical SEO and Core Web Vitals, resulting in a measurable increase in organic visitor traffic.</p>
                 </a>
 
                 <!-- Project 4: A7 Recruitment -->
                 <a href="https://a7recruitment.com" target="_blank" class="group block text-center md:text-left">
-                    <div
-                        class="relative overflow-hidden rounded-[2rem] md:rounded-[40px] aspect-video bg-zinc-900 border border-white/5 mb-6 md:mb-8 group-hover:border-white/20 transition">
-
-                        <!-- PROJECT IMAGE -->
-                        <img src="assets/a7recruitment.webp" alt="A7 Recruitment"
-                            class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-105">
-
-                        <div
-                            class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-black/90 flex items-center justify-center p-6 md:p-12">
-                            <span
-                                class="text-white/10 font-black text-3xl md:text-4xl uppercase italic group-hover:text-white/20 transition duration-500">Recruitment</span>
+                    <div class="relative overflow-hidden rounded-[2rem] md:rounded-[40px] aspect-video bg-zinc-900 border border-white/5 mb-6 md:mb-8">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-black/90 flex items-center justify-center p-6 md:p-12">
+                            <span class="text-white/10 font-black text-3xl md:text-4xl uppercase italic group-hover:text-white/20 transition duration-500">Recruitment</span>
                         </div>
-                        <div
-                            class="absolute bottom-4 left-4 md:bottom-6 md:left-6 glass px-4 py-2 md:px-6 md:py-3 rounded-xl md:rounded-2xl text-xs md:text-sm font-bold text-blue-400 flex items-center gap-2">
+                        <div class="absolute bottom-4 left-4 md:bottom-6 md:left-6 glass px-4 py-2 md:px-6 md:py-3 rounded-xl md:rounded-2xl text-xs md:text-sm font-bold text-blue-400 flex items-center gap-2">
                             <i data-lucide="users" class="w-4 h-4 md:w-5 md:h-5"></i>
-                            +Inquiries
+                            +Applications
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">A7 Recruitment
-                    </h3>
-                    <p class="text-gray-400 leading-relaxed">High-performance revamp that drove a surge in service
-                        inquiries and job applications through improved UX and local SEO.</p>
+                    <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">A7 Recruitment</h3>
+                    <p class="text-gray-400 leading-relaxed">High-performance revamp that drove a surge in service inquiries and job applications through improved UX and local SEO.</p>
                 </a>
             </div>
         </div>
@@ -642,29 +420,22 @@
 
     <!-- AI Tech Consultant (Floating) -->
     <div class="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-[100]">
-        <div id="ai-chat-box"
-            class="hidden absolute bottom-20 right-0 w-[90vw] md:w-96 glass rounded-3xl p-6 md:p-8 border-blue-500/30 shadow-2xl">
+        <div id="ai-chat-box" class="hidden absolute bottom-20 right-0 w-[90vw] md:w-96 glass rounded-3xl p-6 md:p-8 border-blue-500/30 shadow-2xl">
             <h4 class="text-white font-bold mb-2 flex items-center gap-2">
                 <i data-lucide="bot" class="w-6 h-6 text-blue-400"></i> AI Assistant
             </h4>
-            <p class="text-xs text-gray-400 mb-6 italic border-b border-white/5 pb-4">Ask me how I fix speed, SEO, or
-                security issues.</p>
-            <div id="ai-chat-history"
-                class="text-sm text-gray-300 max-h-60 md:max-h-72 overflow-y-auto mb-6 space-y-4 pr-2 custom-scrollbar">
-                <div class="bg-white/5 p-4 rounded-2xl">Hi! I can explain why speed or security matters for your
-                    business. What's on your mind?</div>
+            <p class="text-xs text-gray-400 mb-6 italic border-b border-white/5 pb-4">Ask me how I fix speed, SEO, or security issues.</p>
+            <div id="ai-chat-history" class="text-sm text-gray-300 max-h-60 md:max-h-72 overflow-y-auto mb-6 space-y-4 pr-2 custom-scrollbar">
+                <div class="bg-white/5 p-4 rounded-2xl">Hi! I can explain why speed or security matters for your business. What's on your mind?</div>
             </div>
             <div class="flex gap-2 bg-black/40 p-2 rounded-2xl border border-white/10">
-                <input id="ai-chat-input" type="text" placeholder="Ask a question..."
-                    class="w-full bg-transparent border-none px-3 py-2 text-sm text-white focus:outline-none">
-                <button onclick="askConsultant()"
-                    class="bg-blue-600 p-3 rounded-xl text-white hover:bg-blue-500 transition shadow-lg">
+                <input id="ai-chat-input" type="text" placeholder="Ask a question..." class="w-full bg-transparent border-none px-3 py-2 text-sm text-white focus:outline-none">
+                <button onclick="askConsultant()" class="bg-blue-600 p-3 rounded-xl text-white hover:bg-blue-500 transition shadow-lg">
                     <i data-lucide="send" class="w-4 h-4"></i>
                 </button>
             </div>
         </div>
-        <button onclick="toggleAIChat()"
-            class="glow-button w-16 h-16 md:w-20 md:h-20 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-105 active:scale-95 transition-all">
+        <button onclick="toggleAIChat()" class="glow-button w-16 h-16 md:w-20 md:h-20 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-105 active:scale-95 transition-all">
             <i data-lucide="message-square" id="chat-icon" class="w-6 h-6 md:w-8 md:h-8"></i>
             <i data-lucide="x" id="close-icon" class="hidden w-6 h-6 md:w-8 md:h-8"></i>
         </button>
@@ -673,14 +444,11 @@
     <!-- Contact Form -->
     <section id="contact-section" class="py-32 px-6">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl md:text-5xl font-extrabold mb-8 tracking-tighter text-white">If your website is not
-                helping local customers contact you, it needs fixing.</h2>
+            <h2 class="text-4xl md:text-7xl font-extrabold mb-8 tracking-tighter text-white">Let's grow your <span class="text-gradient">online presence.</span></h2>
             <p class="text-xl text-gray-400 mb-16 leading-relaxed max-w-2xl mx-auto">
-                Tell me what your business does and who you serve locally. I will reply with a clear recommendation
-                within 24 hours.
+                Ready for a website that actually works for you? Fill out the form below and I'll get back to you with a plan within 24 hours.
             </p>
-            <div id="contact-form-container"
-                class="glass p-8 md:p-16 rounded-[60px] border border-blue-500/20 text-left">
+            <div id="contact-form-container" class="glass p-8 md:p-16 rounded-[60px] border border-blue-500/20 text-left">
                 <!-- 
                      INSTRUCTION: 
                      1. Go to https://web3forms.com/ to get your free Access Key.
@@ -689,44 +457,26 @@
                 <form onsubmit="handleContactSubmit(event)" class="grid gap-6">
                     <!-- Web3Forms Access Key -->
                     <input type="hidden" name="access_key" value="7efb03b6-7e58-44c5-9b18-76d22ccf248d">
-
+                    
                     <!-- Optional: Honeypot to prevent spam bots -->
                     <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
                     <div class="grid sm:grid-cols-2 gap-6">
                         <div class="space-y-2">
-                            <label class="text-xs font-bold uppercase text-gray-500 tracking-widest ml-1">Your
-                                Name</label>
-                            <input type="text" name="name" required placeholder="John"
-                                class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-blue-500 transition">
+                            <label class="text-xs font-bold uppercase text-gray-500 tracking-widest ml-1">Your Name</label>
+                            <input type="text" name="name" required placeholder="John" class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-blue-500 transition">
                         </div>
                         <div class="space-y-2">
-                            <label class="text-xs font-bold uppercase text-gray-500 tracking-widest ml-1">Email
-                                Address</label>
-                            <input type="email" name="email" required placeholder="john@email.com"
-                                class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-blue-500 transition">
+                            <label class="text-xs font-bold uppercase text-gray-500 tracking-widest ml-1">Email Address</label>
+                            <input type="email" name="email" required placeholder="john@email.com" class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-blue-500 transition">
                         </div>
                     </div>
                     <div class="space-y-2">
-                        <label class="text-xs font-bold uppercase text-gray-500 tracking-widest ml-1">Project
-                            Details</label>
-                        <textarea rows="5" name="message" required placeholder="What are your goals for your website?"
-                            class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-blue-500 transition"></textarea>
+                        <label class="text-xs font-bold uppercase text-gray-500 tracking-widest ml-1">Project Details</label>
+                        <textarea rows="5" name="message" required placeholder="What are your goals for your website?" class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-blue-500 transition"></textarea>
                     </div>
-
-                    <!-- Privacy Checkbox -->
-                    <div class="flex items-center gap-3">
-                        <input type="checkbox" id="privacy-check" required
-                            class="w-5 h-5 rounded border-white/10 bg-white/5 text-blue-600 focus:ring-blue-500 cursor-pointer accent-blue-600">
-                        <label for="privacy-check" class="text-sm text-gray-400 select-none">
-                            I agree to the <button type="button" onclick="togglePrivacyModal()"
-                                class="text-white underline hover:text-blue-400">Privacy Policy</button>
-                        </label>
-                    </div>
-
-                    <button type="submit"
-                        class="glow-button bg-blue-600 text-white font-bold py-6 rounded-2xl text-xl mt-4 w-full flex items-center justify-center gap-3 hover:bg-blue-500 transition">
-                        Get a Free Website Review <i data-lucide="send" class="w-6 h-6"></i>
+                    <button type="submit" class="glow-button bg-blue-600 text-white font-bold py-6 rounded-2xl text-xl mt-4 w-full flex items-center justify-center gap-3 hover:bg-blue-500 transition">
+                        Send My Inquiry <i data-lucide="send" class="w-6 h-6"></i>
                     </button>
                 </form>
             </div>
@@ -734,128 +484,43 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-16 px-6 border-t border-white/5 bg-black">
+    <footer class="py-20 px-6 border-t border-white/5 bg-black">
         <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-4 gap-12 mb-16">
-                <div class="md:col-span-2">
-                    <div class="text-2xl font-black tracking-tighter flex items-center gap-1 mb-6">
-                        <span class="text-white">DRANO</span>
-                        <span class="text-blue-500 font-mono text-lg tracking-normal">&lt;web/&gt;</span>
-                    </div>
-                    <p class="text-gray-500 leading-relaxed max-w-sm">
-                        Helping local businesses grow with high-performance websites. No bloat, just results.
-                    </p>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-12 mb-12">
+                <div class="text-2xl font-black tracking-tighter flex items-center gap-1">
+                    <span class="text-white">DRANO</span>
+                    <span class="text-blue-500 font-mono text-lg tracking-normal">&lt;web/&gt;</span>
                 </div>
-                <div>
-                    <h4 class="text-white font-bold mb-6">Navigation</h4>
-                    <ul class="space-y-4 text-sm text-gray-500">
-                        <li><a href="#about" class="hover:text-blue-400 transition">About Me</a></li>
-                        <li><a href="#work" class="hover:text-blue-400 transition">Portfolio</a></li>
-                        <li><a href="#services" class="hover:text-blue-400 transition">Services</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-6">Legal & Contact</h4>
-                    <ul class="space-y-4 text-sm text-gray-500">
-                        <li><button onclick="togglePrivacyModal()"
-                                class="hover:text-blue-400 transition text-left">Privacy Policy</button></li>
-                        <li><a href="#audit-tool" class="hover:text-blue-400 transition">Free Website Audit</a></li>
-                        <li><a href="mailto:drano.sembrano@gmail.com"
-                                class="hover:text-blue-400 transition">drano.sembrano@gmail.com</a></li>
-                    </ul>
+                <div class="flex flex-wrap justify-center gap-10 text-sm font-semibold uppercase tracking-widest text-gray-500">
+                    <a href="#about" class="hover:text-white transition">About</a>
+                    <a href="#services" class="hover:text-white transition">Services</a>
+                    <a href="#work" class="hover:text-white transition">Portfolio</a>
+                    <a href="#audit-tool" class="hover:text-blue-400 transition">Free Audit</a>
+                    <a href="#contact-section" class="hover:text-white transition">Contact</a>
                 </div>
             </div>
-
-            <div
-                class="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-white/5 text-sm text-gray-600">
-                <p>&copy; <span id="year"></span> Drano Web Solutions. All rights reserved.</p>
-                <div class="flex items-center gap-4">
-                    <!-- WhatsApp (Linked via Icon Only - Hidden from simple text scrapers) -->
-                    <a href="https://wa.me/639912302445" target="_blank" aria-label="WhatsApp"
-                        class="hover:text-green-400 transition p-2 bg-white/5 rounded-full group">
-                        <i data-lucide="message-circle" class="w-4 h-4 group-hover:text-green-400"></i>
-                    </a>
-
-                    <a href="#" class="hover:text-white transition p-2 bg-white/5 rounded-full"><i data-lucide="github"
-                            class="w-4 h-4"></i></a>
-                    <a href="#" class="hover:text-white transition p-2 bg-white/5 rounded-full"><i
-                            data-lucide="linkedin" class="w-4 h-4"></i></a>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 pt-12 border-t border-white/5 text-sm text-gray-600">
+                <p>© 2024 Drano Web Solutions. Professional WordPress Development.</p>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="hover:text-blue-500 transition"><i data-lucide="github" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-blue-500 transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Privacy Policy Modal -->
-    <div id="privacy-modal" class="fixed inset-0 z-[100] hidden">
-        <!-- Backdrop -->
-        <div class="absolute inset-0 bg-black/90 backdrop-blur-sm" onclick="togglePrivacyModal()"></div>
-        <!-- Modal Content -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl px-6">
-            <div class="glass bg-zinc-900 border border-white/10 rounded-3xl p-8 max-h-[80vh] overflow-y-auto">
-                <div class="flex justify-between items-start mb-6">
-                    <h3 class="text-2xl font-bold text-white">Privacy Policy</h3>
-                    <button onclick="togglePrivacyModal()" class="text-gray-400 hover:text-white transition">
-                        <i data-lucide="x" class="w-6 h-6"></i>
-                    </button>
-                </div>
-                <div class="prose prose-invert prose-sm max-w-none text-gray-300">
-                    <p>Last Updated: <span id="privacy-date"></span></p>
-
-                    <h4 class="text-white font-bold mt-4 mb-2">1. Introduction</h4>
-                    <p>Welcome to Drano Web Solutions. I respect your privacy and am committed to protecting your
-                        personal data. This privacy policy will inform you as to how I look after your personal data
-                        when you visit my website and tell you about your privacy rights.</p>
-
-                    <h4 class="text-white font-bold mt-4 mb-2">2. Information I Collect</h4>
-                    <p>I may collect, use, store and transfer different kinds of personal data about you which I have
-                        grouped together follows: Identity Data (name), Contact Data (email address), and Technical Data
-                        (internet protocol (IP) address, browser type and version).</p>
-
-                    <h4 class="text-white font-bold mt-4 mb-2">3. How I Use Your Data</h4>
-                    <p>I will only use your personal data when the law allows me to. Most commonly, I will use your
-                        personal data in the following circumstances: to respond to your inquiries via the contact form,
-                        to provide the services you requested (Website Audit), and to improve my website structure.</p>
-
-                    <h4 class="text-white font-bold mt-4 mb-2">4. Data Security</h4>
-                    <p>I have put in place appropriate security measures to prevent your personal data from being
-                        accidentally lost, used or accessed in an unauthorized way, altered or disclosed.</p>
-
-                    <h4 class="text-white font-bold mt-4 mb-2">5. Third-Party Links</h4>
-                    <p>This website may include links to third-party websites, plug-ins and applications. Clicking on
-                        those links or enabling those connections may allow third parties to collect or share data about
-                        you.</p>
-                </div>
-                <button onclick="togglePrivacyModal()"
-                    class="mt-8 bg-white text-black font-bold px-6 py-3 rounded-xl hover:bg-gray-200 transition w-full">
-                    Close Policy
-                </button>
-            </div>
-        </div>
-    </div>
-
     <!-- Scripts -->
     <script>
         // PASTE YOUR API KEY HERE
         // SAFETY TIP: Restrict this key in Google Cloud Console to only work on your domain (HTTP Referrer)
-        const apiKey = "AIzaSyAemBwIPCXmIjF6lxf3LEburSbLIsewfXE";
+        const apiKey = "AIzaSyAemBwIPCXmIjF6lxf3LEburSbLIsewfXE"; 
         const modelName = "gemini-2.5-flash-preview-09-2025";
-
+        
         lucide.createIcons();
-
-        // Set Dynamic Year and Date
-        document.getElementById('year').textContent = new Date().getFullYear();
-        document.getElementById('privacy-date').textContent = new Date().toLocaleDateString();
 
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
-        }
-
-        function togglePrivacyModal() {
-            const modal = document.getElementById('privacy-modal');
-            modal.classList.toggle('hidden');
-            // Prevent scrolling when modal is open
-            document.body.style.overflow = modal.classList.contains('hidden') ? 'auto' : 'hidden';
         }
 
         function toggleAIChat() {
@@ -889,15 +554,14 @@
 
         async function runAudit() {
             const urlInput = document.getElementById('audit-url').value;
-            const industryInput = document.getElementById('audit-industry').value; // Get the industry
             const issueSelect = document.getElementById('audit-issue').value;
             const btn = document.getElementById('audit-btn');
             const loader = document.getElementById('audit-loading');
             const resultContainer = document.getElementById('audit-result-container');
             const errorContainer = document.getElementById('audit-error');
 
-            if (!urlInput || !industryInput) {
-                errorContainer.textContent = "Please enter both your URL and Industry so I can give a precise audit.";
+            if (!urlInput) {
+                errorContainer.textContent = "Please enter your URL first!";
                 errorContainer.classList.remove('hidden');
                 return;
             }
@@ -907,24 +571,24 @@
             loader.classList.remove('hidden');
             resultContainer.innerHTML = '';
 
-            // Updated Prompt: Injects the specific Industry for precision
-            const systemPrompt = "You are a specialized Local Business Website Strategist. Your goal is to help local service businesses get more calls and inquiries. Provide a strategic website audit based on the user's specific industry. Focus on Local SEO, Mobile Speed, and Conversion (getting calls). Important: Output your response in clean HTML format (no markdown, no code blocks). Use <h3> tags with Tailwind class 'text-xl font-bold text-white mb-2 mt-4' for headings. Use <ul class='list-none space-y-3 mb-6'> for lists. Use <li class='flex gap-3 items-start'><span class='text-blue-400 mt-1'>➜</span><span> for list items (close with </span></li>). Use <p class='text-gray-400 mb-4'> for paragraphs. Provide 3 specific, high-impact fixes.";
-
-            // This ensures the AI knows exactly what kind of business it is
-            const userPrompt = `Audit Request for: ${urlInput}. Industry: ${industryInput}. Core Pain Point: ${issueSelect || "General Improvement"}. Suggest 3 actionable steps to fix this for a ${industryInput} business website.`;
+            // Updated Prompt: Removed name DRANO
+            const systemPrompt = "You are a specialized WordPress Performance Architect. Provide a strategic website audit. Important: Output your response in clean HTML format (no markdown, no code blocks). Use <h3> tags with Tailwind class 'text-xl font-bold text-white mb-2 mt-4' for headings. Use <ul class='list-none space-y-3 mb-6'> for lists. Use <li class='flex gap-3 items-start'><span class='text-blue-400 mt-1'>➜</span><span> for list items (close with </span></li>). Use <p class='text-gray-400 mb-4'> for paragraphs. Provide 3 specific, high-impact technical fixes.";
+            
+            const userPrompt = `Audit Request for: ${urlInput}. Core Pain Point: ${issueSelect}. Suggest 3 actionable steps to fix this using modern WordPress/Elementor techniques.`;
 
             try {
                 const result = await callGemini({
                     contents: [{ parts: [{ text: userPrompt }] }],
                     systemInstruction: { parts: [{ text: systemPrompt }] }
                 });
-
+                
+                // Clean up any potential markdown code fences if the model adds them by mistake
                 const cleanHtml = result.replace(/```html/g, '').replace(/```/g, '');
 
                 resultContainer.innerHTML = `
                     <div class="bg-white/5 p-8 rounded-[32px] border border-white/10 animate-fade-in">
                         <div class="flex items-center gap-2 text-blue-400 font-bold mb-6 text-xs tracking-widest uppercase border-b border-white/5 pb-4">
-                            <i data-lucide="check-circle" class="w-4 h-4"></i> Strategy for ${industryInput} Website
+                            <i data-lucide="check-circle" class="w-4 h-4"></i> Strategy for ${urlInput}
                         </div>
                         <div class="prose prose-invert max-w-none">
                             ${cleanHtml}
@@ -959,9 +623,9 @@
             input.value = '';
             history.scrollTop = history.scrollHeight;
 
-            // Updated Prompt: Focused on Local Business ROI
-            const systemPrompt = "You are a friendly expert in Local Business Websites. Your goal is to explain how technical things (like Speed, SEO, Mobile) help a local business get more phone calls and customers. Avoid jargon. Keep answers under 80 words. Use <b>bold tags</b> for key takeaways.";
-
+            // Updated Prompt: Removed name DRANO
+            const systemPrompt = "You are a friendly and professional WordPress Consultant. Your goal is to convert visitors into clients by answering their technical questions in simple business value terms. Focus on ROI, Speed, and Security. Keep answers under 80 words. Use <b>bold tags</b> for key takeaways.";
+            
             try {
                 const answer = await callGemini({
                     contents: [{ parts: [{ text: question }] }],
@@ -974,7 +638,7 @@
                 const aiDiv = document.createElement('div');
                 aiDiv.className = "bg-white/5 p-4 rounded-2xl border border-white/10 mb-2 italic text-sm text-gray-300";
                 // Changed textContent to innerHTML to allow bold tags
-                aiDiv.innerHTML = formattedAnswer;
+                aiDiv.innerHTML = formattedAnswer; 
                 history.appendChild(aiDiv);
             } catch (err) {
                 const errorDiv = document.createElement('div');
@@ -993,11 +657,11 @@
             const form = e.target;
             const btn = form.querySelector('button');
             const originalText = btn.innerHTML;
-
+            
             // Loading state
             btn.disabled = true;
             btn.innerHTML = 'Sending...';
-
+            
             const formData = new FormData(form);
 
             try {
@@ -1005,7 +669,7 @@
                     method: "POST",
                     body: formData
                 });
-
+                
                 const data = await response.json();
 
                 if (data.success) {
@@ -1028,7 +692,7 @@
                 console.error("Form Error:", error);
                 alert("Error sending message. Please try again later.");
             } finally {
-                if (btn) {
+                if(btn) {
                     btn.disabled = false;
                     btn.innerHTML = originalText;
                 }
@@ -1052,5 +716,4 @@
         });
     </script>
 </body>
-
 </html>
