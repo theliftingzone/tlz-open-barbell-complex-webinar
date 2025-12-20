@@ -18,10 +18,20 @@
     <meta name="keywords"
         content="Drano Web Solutions, local business websites, WordPress development, website design, website development">
     <title>Drano Web Solutions | Local Business Websites that Drive Calls & Inquiries</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- PERFORMANCE: Preconnect to font servers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- PERFORMANCE: Use font-display: swap for faster text rendering -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+    <!-- Tailwind CDN (Note: For 100/100 speed, consider compiling this in a build step later) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Defer non-critical scripts -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 
     <!-- Custom Styles -->
     <style>
@@ -107,13 +117,10 @@
     <!-- Navbar -->
     <nav class="fixed w-full z-50 top-0 glass border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <!-- <div class="text-xl font-extrabold tracking-tighter flex items-center gap-1">
-                <span class="text-white">DRANO</span>
-                <span class="text-blue-500 font-mono text-lg">&lt;web/&gt;</span>
-            </div> -->
 
-            <!-- Option 2: Image Logo (Uncomment below and add 'logo.png' to assets folder) -->
-            <img src="assets/logo.svg" alt="Drano Web Solutions" class="h-8 w-auto">
+            <!-- Option 2: Image Logo -->
+            <!-- A11Y: Added alt text -->
+            <img src="assets/logo.svg" alt="Drano Web Solutions Logo" class="h-8 w-auto" width="120" height="32">
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
@@ -127,7 +134,8 @@
             </div>
 
             <!-- Mobile Menu Button -->
-            <button onclick="toggleMobileMenu()" class="md:hidden text-white p-2">
+            <!-- A11Y: Added aria-label -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-white p-2" aria-label="Open Menu">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </div>
@@ -169,7 +177,7 @@
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="#audit-tool"
                     class="glow-button bg-blue-600 text-white px-6 py-3 md:px-10 md:py-4 rounded-xl font-bold text-base md:text-lg w-full sm:w-auto text-center">
-                    ✨ Get a Free Website Review
+                    Get a Free Website Review
                 </a>
                 <a href="#work"
                     class="glass text-white px-6 py-3 md:px-10 md:py-4 rounded-xl font-bold text-base md:text-lg w-full sm:w-auto border border-white/10 hover:bg-white/5 transition text-center">
@@ -200,17 +208,22 @@
                     <div class="flex flex-col gap-4">
                         <div class="grid sm:grid-cols-2 gap-4">
                             <!-- URL Input -->
+                            <!-- A11Y: Added aria-label -->
                             <input id="audit-url" type="text" placeholder="Website URL (e.g. yoursite.com)"
+                                aria-label="Website URL"
                                 class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 md:px-6 md:py-4 text-white focus:outline-none focus:border-blue-500 transition">
 
-                            <!-- Industry Input (NEW: Fixes the precision issue) -->
+                            <!-- Industry Input -->
+                            <!-- A11Y: Added aria-label -->
                             <input id="audit-industry" type="text" placeholder="Industry (e.g. Plumber, Wellness, Cafe)"
+                                aria-label="Business Industry"
                                 class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 md:px-6 md:py-4 text-white focus:outline-none focus:border-blue-500 transition">
                         </div>
 
                         <!-- Pain Point Dropdown -->
                         <div class="relative w-full">
-                            <select id="audit-issue"
+                            <!-- A11Y: Added aria-label -->
+                            <select id="audit-issue" aria-label="Primary Website Frustration"
                                 class="w-full appearance-none bg-zinc-900 border border-white/10 rounded-xl px-4 py-3 md:px-6 md:py-4 text-white focus:outline-none focus:border-blue-500 transition cursor-pointer pr-12">
                                 <option value="" disabled selected>What is your biggest frustration?</option>
                                 <option value="Low Loading Speed">My site is too slow</option>
@@ -259,78 +272,67 @@
             <p class="text-center text-gray-500 text-sm font-medium mb-10 max-w-2xl mx-auto">Local service businesses,
                 startups, and teams that rely on their website to bring in real inquiries.</p>
 
-            <!-- 
-                GRID LAYOUT FOR 10 LOGOS:
-                - grid-cols-2: 2 logos per row on mobile (readable size)
-                - md:grid-cols-5: 5 logos per row on desktop (clean 2 rows)
-            -->
             <div class="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-12 items-center">
+                <!-- SPEED: Added loading="lazy" and width/height to all logos to prevent layout shifts -->
 
-                <!-- Client 1 -->
                 <div
                     class="flex justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
-                    <img src="assets/padel-society.svg" alt="Padel Society" class="h-8 md:h-12 w-auto object-contain">
-
+                    <img src="assets/padel-society.svg" alt="Padel Society" width="150" height="60"
+                        class="h-8 md:h-12 w-auto object-contain" loading="lazy">
                 </div>
 
-                <!-- Client 2 -->
                 <div
                     class="flex justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
-                    <img src="assets/tmm.svg" alt="The Mobility Manual" class="h-8 md:h-12 w-auto object-contain">
-
+                    <img src="assets/tmm.svg" alt="The Mobility Manual" width="150" height="60"
+                        class="h-8 md:h-12 w-auto object-contain" loading="lazy">
                 </div>
 
-                <!-- Client 3 -->
                 <div
                     class="flex justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
-                    <img src="assets/tlz.svg" alt="The Lifting Zone" class="h-8 md:h-12 w-auto object-contain">
+                    <img src="assets/tlz.svg" alt="The Lifting Zone" width="150" height="60"
+                        class="h-8 md:h-12 w-auto object-contain" loading="lazy">
                 </div>
 
-                <!-- Client 4 -->
                 <div
                     class="flex justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
-                    <img src="assets/Advantage-Plus-Concreting-Logo.svg" alt="Advantage Plus Concreting"
-                        class="h-8 md:h-12 w-auto object-contain">
+                    <img src="assets/Advantage-Plus-Concreting-Logo.svg" alt="Advantage Plus Concreting" width="150"
+                        height="60" class="h-8 md:h-12 w-auto object-contain" loading="lazy">
                 </div>
 
-                <!-- Client 5 -->
                 <div
                     class="flex justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
-                    <img src="assets/Element Studio - Logo.svg" alt="Element Studio"
-                        class="h-8 md:h-12 w-auto object-contain">
-
+                    <img src="assets/Element Studio - Logo.svg" alt="Element Studio" width="150" height="60"
+                        class="h-8 md:h-12 w-auto object-contain" loading="lazy">
                 </div>
 
-                <!-- Client 6 -->
                 <div
                     class="flex justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
-                    <img src="assets/embod.svg" alt="Embod East Brisbane" class="h-8 md:h-12 w-auto object-contain">
+                    <img src="assets/embod.svg" alt="Embod East Brisbane" width="150" height="60"
+                        class="h-8 md:h-12 w-auto object-contain" loading="lazy">
                 </div>
 
-                <!-- Client 7 -->
                 <div
                     class="flex justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
-                    <img src="assets/a7.svg" alt="A7 Recruitment" class="h-8 md:h-12 w-auto object-contain">
+                    <img src="assets/a7.svg" alt="A7 Recruitment" width="150" height="60"
+                        class="h-8 md:h-12 w-auto object-contain" loading="lazy">
                 </div>
 
-                <!-- Client 8 -->
                 <div
                     class="flex justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
-                    <img src="assets/investingprotools.svg" alt="Investing Pro Tools"
-                        class="h-8 md:h-12 w-auto object-contain">
+                    <img src="assets/investingprotools.svg" alt="Investing Pro Tools" width="150" height="60"
+                        class="h-8 md:h-12 w-auto object-contain" loading="lazy">
                 </div>
 
-                <!-- Client 9 -->
                 <div
                     class="flex justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
-                    <img src="assets/weblead.svg" alt="Weblead Genius" class="h-8 md:h-12 w-auto object-contain">
+                    <img src="assets/weblead.svg" alt="Weblead Genius" width="150" height="60"
+                        class="h-8 md:h-12 w-auto object-contain" loading="lazy">
                 </div>
 
-                <!-- Client 10 -->
                 <div
                     class="flex justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
-                    <img src="assets/corksandstrokes.svg" alt="Corks and Strokes"
-                        class="h-8 md:h-12 w-auto object-contain">
+                    <img src="assets/corksandstrokes.svg" alt="Corks and Strokes" width="150" height="60"
+                        class="h-8 md:h-12 w-auto object-contain" loading="lazy">
                 </div>
 
             </div>
@@ -355,8 +357,9 @@
                     <div
                         class="relative bg-zinc-900 rounded-[2rem] p-1 border border-white/10 overflow-hidden aspect-[4/3] flex items-center justify-center">
 
-                        <img src="assets/me.webp" alt="Adrian Sembrano"
-                            class="w-full h-full object-cover rounded-[1.8rem]">
+                        <!-- SPEED: Added width/height and lazy loading -->
+                        <img src="assets/me.webp" alt="Adrian Sembrano" width="600" height="450"
+                            class="w-full h-full object-cover rounded-[1.8rem]" loading="lazy">
 
                     </div>
                 </div>
@@ -368,7 +371,7 @@
                     <span class="md:hidden">Practical Local Web Solutions</span>
                     <span class="hidden md:inline">A practical approach to local business websites</span>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white leading-tight">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white leading-tight">
                     Who you are <span class="text-gradient">working with.</span>
                 </h2>
                 <p class="text-gray-400 text-lg leading-relaxed mb-6">
@@ -501,7 +504,7 @@
                         class="w-20 h-20 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 text-blue-400 group-hover:scale-110 transition duration-300 border border-blue-500/20">
                         <i data-lucide="zap" class="w-10 h-10"></i>
                     </div>
-                    <div class="text-2xl md:text-3xl font-bold text-white mb-4">Instant Speed</div>
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-4">Instant Speed</div>
                     <p
                         class="text-gray-400 font-bold uppercase text-xs tracking-widest leading-relaxed max-w-xs mx-auto">
                         Stop losing mobile customers to slow loading</p>
@@ -513,7 +516,7 @@
                         class="w-20 h-20 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 text-blue-400 group-hover:scale-110 transition duration-300 border border-blue-500/20">
                         <i data-lucide="message-square" class="w-10 h-10"></i>
                     </div>
-                    <div class="text-2xl md:text-3xl font-bold text-white mb-4">More Inquiries</div>
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-4">More Inquiries</div>
                     <p
                         class="text-gray-400 font-bold uppercase text-xs tracking-widest leading-relaxed max-w-xs mx-auto">
                         Layouts designed to generate calls & emails</p>
@@ -525,7 +528,7 @@
                         class="w-20 h-20 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 text-blue-400 group-hover:scale-110 transition duration-300 border border-blue-500/20">
                         <i data-lucide="map-pin" class="w-10 h-10"></i>
                     </div>
-                    <div class="text-2xl md:text-3xl font-bold text-white mb-4">Local Reach</div>
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-4">Local Reach</div>
                     <p
                         class="text-gray-400 font-bold uppercase text-xs tracking-widest leading-relaxed max-w-xs mx-auto">
                         Technical structure that helps you rank locally</p>
@@ -550,12 +553,14 @@
                         class="relative overflow-hidden rounded-[2rem] md:rounded-[40px] aspect-video bg-zinc-900 border border-white/5 mb-6 md:mb-8 group-hover:border-white/20 transition">
 
                         <!-- PROJECT IMAGE -->
-                        <img src="assets/APC.webp" alt="Advantage Plus Concreting"
-                            class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                        <!-- SPEED: Added width/height and lazy loading -->
+                        <img src="assets/APC.webp" alt="Advantage Plus Concreting" width="800" height="450"
+                            class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-105"
+                            loading="lazy">
 
                         <!-- Gradient Overlay: UPDATED to be subtle so image is visible -->
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition duration-500">
+                            class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 group-hover:opacity-60 transition duration-500">
                         </div>
 
                         <div
@@ -576,12 +581,13 @@
                         class="relative overflow-hidden rounded-[2rem] md:rounded-[40px] aspect-video bg-zinc-900 border border-white/5 mb-6 md:mb-8 group-hover:border-white/20 transition">
 
                         <!-- PROJECT IMAGE -->
-                        <img src="assets/elements-studio.webp" alt="Elements Studio"
-                            class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                        <img src="assets/elements-studio.webp" alt="Elements Studio" width="800" height="450"
+                            class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-105"
+                            loading="lazy">
 
                         <!-- Gradient Overlay -->
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition duration-500">
+                            class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 group-hover:opacity-60 transition duration-500">
                         </div>
 
                         <div
@@ -602,12 +608,13 @@
                         class="relative overflow-hidden rounded-[2rem] md:rounded-[40px] aspect-video bg-zinc-900 border border-white/5 mb-6 md:mb-8 group-hover:border-white/20 transition">
 
                         <!-- PROJECT IMAGE -->
-                        <img src="assets/embod.webp" alt="Embod East Brisbane"
-                            class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                        <img src="assets/embod.webp" alt="Embod East Brisbane" width="800" height="450"
+                            class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-105"
+                            loading="lazy">
 
                         <!-- Gradient Overlay -->
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition duration-500">
+                            class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 group-hover:opacity-60 transition duration-500">
                         </div>
 
                         <div
@@ -616,8 +623,7 @@
                             Visitor Growth
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">Embod East
-                        Brisbane
+                    <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">Embod Wellness
                     </h3>
                     <p class="text-gray-400 leading-relaxed">Complete overhaul for a health & wellness brand focusing on
                         technical SEO and Core Web Vitals, resulting in a measurable increase in organic visitor
@@ -630,12 +636,13 @@
                         class="relative overflow-hidden rounded-[2rem] md:rounded-[40px] aspect-video bg-zinc-900 border border-white/5 mb-6 md:mb-8 group-hover:border-white/20 transition">
 
                         <!-- PROJECT IMAGE -->
-                        <img src="assets/a7recruitment.webp" alt="A7 Recruitment"
-                            class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                        <img src="assets/a7recruitment.webp" alt="A7 Recruitment" width="800" height="450"
+                            class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-105"
+                            loading="lazy">
 
                         <!-- Gradient Overlay -->
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition duration-500">
+                            class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 group-hover:opacity-60 transition duration-500">
                         </div>
 
                         <div
@@ -668,15 +675,18 @@
                     business. What's on your mind?</div>
             </div>
             <div class="flex gap-2 bg-black/40 p-2 rounded-2xl border border-white/10">
-                <input id="ai-chat-input" type="text" placeholder="Ask a question..."
+                <!-- A11Y: Added aria-label -->
+                <input id="ai-chat-input" type="text" placeholder="Ask a question..." aria-label="Ask AI Assistant"
                     class="w-full bg-transparent border-none px-3 py-2 text-sm text-white focus:outline-none">
-                <button onclick="askConsultant()"
+                <!-- A11Y: Added aria-label -->
+                <button onclick="askConsultant()" aria-label="Send Message"
                     class="bg-blue-600 p-3 rounded-xl text-white hover:bg-blue-500 transition shadow-lg">
                     <i data-lucide="send" class="w-4 h-4"></i>
                 </button>
             </div>
         </div>
-        <button onclick="toggleAIChat()"
+        <!-- A11Y: Added aria-label -->
+        <button onclick="toggleAIChat()" aria-label="Toggle Chat"
             class="glow-button w-16 h-16 md:w-20 md:h-20 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-105 active:scale-95 transition-all">
             <i data-lucide="message-square" id="chat-icon" class="w-6 h-6 md:w-8 md:h-8"></i>
             <i data-lucide="x" id="close-icon" class="hidden w-6 h-6 md:w-8 md:h-8"></i>
@@ -729,7 +739,8 @@
 
                     <!-- Privacy Checkbox -->
                     <div class="flex items-center gap-3">
-                        <input type="checkbox" id="privacy-check" required
+                        <!-- A11Y: Added aria-label -->
+                        <input type="checkbox" id="privacy-check" required aria-label="Agree to Privacy Policy"
                             class="w-5 h-5 rounded border-white/10 bg-white/5 text-blue-600 focus:ring-blue-500 cursor-pointer accent-blue-600">
                         <label for="privacy-check" class="text-sm text-gray-400 select-none">
                             I agree to the <button type="button" onclick="togglePrivacyModal()"
@@ -739,7 +750,7 @@
 
                     <button type="submit"
                         class="glow-button bg-blue-600 text-white font-bold py-4 md:py-6 rounded-2xl text-lg md:text-xl mt-4 w-full flex items-center justify-center gap-2 md:gap-3 hover:bg-blue-500 transition h-auto">
-                        <span class="md:hidden">Get Free Audit</span>
+                        <span class="md:hidden">Get Free Review</span>
                         <span class="hidden md:inline">Get a Free Website Review</span>
                         <i data-lucide="send" class="w-5 h-5 md:w-6 md:h-6"></i>
                     </button>
@@ -753,14 +764,12 @@
         <div class="max-w-7xl mx-auto text-center md:text-left">
             <div class="grid md:grid-cols-4 gap-12 mb-16">
                 <div class="md:col-span-2">
-                    <!-- <div
-                        class="text-2xl font-black tracking-tighter flex justify-center md:justify-start items-center gap-1 mb-6">
-                        <span class="text-white">DRANO</span>
-                        <span class="text-blue-500 font-mono text-lg tracking-normal">&lt;web/&gt;</span>
-                    </div> -->
-
-
-                    <img src="assets/logo.svg" alt="Drano Web Solutions" class="h-10 w-auto mx-auto md:mx-0 mb-6">
+                    <!-- FOOTER LOGO -->
+                    <!-- A11Y: Added alt text -->
+                    <a href="#" class="block mb-6 hover:opacity-80 transition" aria-label="Home">
+                        <img src="assets/logo.svg" alt="Drano Web Solutions" class="h-10 w-auto mx-auto md:mx-0 mb-6"
+                            width="150" height="40">
+                    </a>
 
                     <p class="text-gray-500 leading-relaxed max-w-sm mx-auto md:mx-0">
                         Helping local businesses grow with high-performance websites. No bloat, just results.
@@ -777,8 +786,8 @@
                 <div>
                     <h4 class="text-white font-bold mb-6">Legal & Contact</h4>
                     <ul class="space-y-4 text-sm text-gray-500">
-                        <li><button onclick="togglePrivacyModal()" class="hover:text-blue-400 transition">Privacy
-                                Policy</button></li>
+                        <li><button onclick="togglePrivacyModal()"
+                                class="hover:text-blue-400 transition text-left">Privacy Policy</button></li>
                         <li><a href="#audit-tool" class="hover:text-blue-400 transition">Free Website Audit</a></li>
                         <li><a href="mailto:drano.sembrano@gmail.com"
                                 class="hover:text-blue-400 transition">drano.sembrano@gmail.com</a></li>
@@ -791,12 +800,14 @@
                 <p>&copy; <span id="year"></span> Drano Web Solutions. All rights reserved.</p>
                 <div class="flex items-center gap-4">
                     <!-- WhatsApp (Linked via Icon Only - Hidden from simple text scrapers) -->
-                    <a href="https://wa.me/639912302445" target="_blank" aria-label="WhatsApp"
+                    <!-- A11Y: Added aria-label -->
+                    <a href="https://wa.me/639912302445" target="_blank" aria-label="Chat on WhatsApp"
                         class="hover:text-green-400 transition p-2 bg-white/5 rounded-full group">
                         <i data-lucide="message-circle" class="w-4 h-4 group-hover:text-green-400"></i>
                     </a>
 
-                    <a href="https://www.linkedin.com/in/adriansembrano/" target="_blank"
+                    <!-- A11Y: Added aria-label -->
+                    <a href="https://www.linkedin.com/in/adriansembrano/" target="_blank" aria-label="LinkedIn Profile"
                         class="hover:text-white transition p-2 bg-white/5 rounded-full"><i data-lucide="linkedin"
                             class="w-4 h-4"></i></a>
                 </div>
@@ -813,7 +824,9 @@
             <div class="glass bg-zinc-900 border border-white/10 rounded-3xl p-8 max-h-[80vh] overflow-y-auto">
                 <div class="flex justify-between items-start mb-6">
                     <h3 class="text-2xl font-bold text-white">Privacy Policy</h3>
-                    <button onclick="togglePrivacyModal()" class="text-gray-400 hover:text-white transition">
+                    <!-- A11Y: Added aria-label -->
+                    <button onclick="togglePrivacyModal()" class="text-gray-400 hover:text-white transition"
+                        aria-label="Close Privacy Policy">
                         <i data-lucide="x" class="w-6 h-6"></i>
                     </button>
                 </div>
@@ -859,7 +872,13 @@
         const apiKey = "AIzaSyAemBwIPCXmIjF6lxf3LEburSbLIsewfXE";
         const modelName = "gemini-2.5-flash-preview-09-2025";
 
-        lucide.createIcons();
+        // FIXED: Wrap icon initialization in an event listener
+        // This waits for the 'defer' script to finish loading before running
+        document.addEventListener("DOMContentLoaded", () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        });
 
         // Set Dynamic Year and Date
         document.getElementById('year').textContent = new Date().getFullYear();
