@@ -27,7 +27,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 
-    <!-- Tailwind CDN (Note: For 100/100 speed, consider compiling this in a build step later) -->
+    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Defer non-critical scripts -->
@@ -44,11 +44,26 @@
             overflow-x: hidden;
         }
 
+        /* PERFORMANCE FIX: Disable heavy blur on mobile, enable only on larger screens */
         .glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(20, 20, 20, 0.8);
+            /* Solid fallback for mobile */
             border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        @media (min-width: 768px) {
+            .glass {
+                background: rgba(255, 255, 255, 0.03);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+            }
+        }
+
+        /* PERFORMANCE FIX: Skip rendering off-screen content until scrolled to */
+        section {
+            content-visibility: auto;
+            contain-intrinsic-size: 800px;
+            /* Approximate height of a section */
         }
 
         .text-gradient {
@@ -59,12 +74,19 @@
 
         .glow-button {
             box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
-            transition: all 0.3s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            will-change: transform;
+            /* Hint to browser to optimize */
         }
 
         .glow-button:hover {
             box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
             transform: translateY(-2px);
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease;
+            will-change: transform;
         }
 
         .card-hover:hover {
@@ -157,7 +179,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative pt-32 md:pt-48 pb-16 md:pb-24 px-6 overflow-hidden">
+    <header class="relative pt-32 md:pt-48 pb-16 md:pb-24 px-6 overflow-hidden" style="content-visibility: visible;">
         <div
             class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-blue-600/10 blur-[120px] rounded-full -z-10">
         </div>
@@ -177,7 +199,7 @@
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="#audit-tool"
                     class="glow-button bg-blue-600 text-white px-6 py-3 md:px-10 md:py-4 rounded-xl font-bold text-base md:text-lg w-full sm:w-auto text-center">
-                    Get a Free Website Review
+                    ✨ Get a Free Website Review
                 </a>
                 <a href="#work"
                     class="glass text-white px-6 py-3 md:px-10 md:py-4 rounded-xl font-bold text-base md:text-lg w-full sm:w-auto border border-white/10 hover:bg-white/5 transition text-center">
