@@ -355,7 +355,8 @@
                 <div
                     class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6">
                     <i data-lucide="handshake" class="w-3 h-3 md:w-4 md:h-4 text-blue-400"></i>
-                    A practical approach to local business websites
+                    <span class="md:hidden">Practical Local Web Solutions</span>
+                    <span class="hidden md:inline">A practical approach to local business websites</span>
                 </div>
                 <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white leading-tight">
                     Who you are <span class="text-gradient">working with.</span>
@@ -388,7 +389,7 @@
                     </div>
                 </div>
 
-                <p class="text-gray-400 text-lg leading-relaxed border-l-4 border-blue-600 pl-6 italic">
+                <p class="text-gray-400 text-lg leading-relaxed border-l-4 border-blue-600 pl-6 italic text-left">
                     "You work directly with me. No handoffs. No layers. Just clear communication and practical results.
                     Small enough to care. Experienced enough to get it right."
                 </p>
@@ -726,8 +727,10 @@
                     </div>
 
                     <button type="submit"
-                        class="glow-button bg-blue-600 text-white font-bold py-4 md:py-6 rounded-2xl text-lg md:text-xl mt-4 w-full flex items-center justify-center gap-3 hover:bg-blue-500 transition">
-                        Get a Free Website Review <i data-lucide="send" class="w-6 h-6"></i>
+                        class="glow-button bg-blue-600 text-white font-bold py-4 md:py-6 rounded-2xl text-lg md:text-xl mt-4 w-full flex items-center justify-center gap-2 md:gap-3 hover:bg-blue-500 transition h-auto">
+                        <span class="md:hidden">Get Free Review</span>
+                        <span class="hidden md:inline">Get a Free Website Review</span>
+                        <i data-lucide="send" class="w-5 h-5 md:w-6 md:h-6"></i>
                     </button>
                 </form>
             </div>
@@ -736,14 +739,15 @@
 
     <!-- Footer -->
     <footer class="py-16 px-6 border-t border-white/5 bg-black">
-        <div class="max-w-7xl mx-auto">
+        <div class="max-w-7xl mx-auto text-center md:text-left">
             <div class="grid md:grid-cols-4 gap-12 mb-16">
                 <div class="md:col-span-2">
-                    <div class="text-2xl font-black tracking-tighter flex items-center gap-1 mb-6">
+                    <div
+                        class="text-2xl font-black tracking-tighter flex justify-center md:justify-start items-center gap-1 mb-6">
                         <span class="text-white">DRANO</span>
                         <span class="text-blue-500 font-mono text-lg tracking-normal">&lt;web/&gt;</span>
                     </div>
-                    <p class="text-gray-500 leading-relaxed max-w-sm">
+                    <p class="text-gray-500 leading-relaxed max-w-sm mx-auto md:mx-0">
                         Helping local businesses grow with high-performance websites. No bloat, just results.
                     </p>
                 </div>
@@ -758,8 +762,8 @@
                 <div>
                     <h4 class="text-white font-bold mb-6">Legal & Contact</h4>
                     <ul class="space-y-4 text-sm text-gray-500">
-                        <li><button onclick="togglePrivacyModal()"
-                                class="hover:text-blue-400 transition text-left">Privacy Policy</button></li>
+                        <li><button onclick="togglePrivacyModal()" class="hover:text-blue-400 transition">Privacy
+                                Policy</button></li>
                         <li><a href="#audit-tool" class="hover:text-blue-400 transition">Free Website Audit</a></li>
                         <li><a href="mailto:drano.sembrano@gmail.com"
                                 class="hover:text-blue-400 transition">drano.sembrano@gmail.com</a></li>
@@ -777,10 +781,9 @@
                         <i data-lucide="message-circle" class="w-4 h-4 group-hover:text-green-400"></i>
                     </a>
 
-                    <a href="#" class="hover:text-white transition p-2 bg-white/5 rounded-full"><i data-lucide="github"
+                    <a href="https://www.linkedin.com/in/adriansembrano/" target="_blank"
+                        class="hover:text-white transition p-2 bg-white/5 rounded-full"><i data-lucide="linkedin"
                             class="w-4 h-4"></i></a>
-                    <a href="#" class="hover:text-white transition p-2 bg-white/5 rounded-full"><i
-                            data-lucide="linkedin" class="w-4 h-4"></i></a>
                 </div>
             </div>
         </div>
