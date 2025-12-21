@@ -72,7 +72,10 @@
             }
         }
 
-        /* REMOVED section { content-visibility: auto; } to fix overlapping/dynamic height issues */
+        section {
+            content-visibility: auto;
+            contain-intrinsic-size: 800px;
+        }
 
         .text-gradient {
             background: linear-gradient(to right, #4ade80, #3b82f6);
@@ -241,13 +244,11 @@
                     <div class="flex flex-col gap-4">
                         <div class="grid sm:grid-cols-2 gap-4">
                             <!-- URL Input -->
-                            <!-- A11Y: Added aria-label -->
                             <input id="audit-url" type="text" placeholder="Website URL (e.g. yoursite.com)"
                                 aria-label="Website URL"
                                 class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 md:px-6 md:py-4 text-white text-sm md:text-base focus:outline-none focus:border-blue-500 transition">
 
                             <!-- Industry Input -->
-                            <!-- A11Y: Added aria-label -->
                             <input id="audit-industry" type="text" placeholder="Industry (e.g. Plumber, Wellness, Cafe)"
                                 aria-label="Business Industry"
                                 class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 md:px-6 md:py-4 text-white text-sm md:text-base focus:outline-none focus:border-blue-500 transition">
@@ -255,7 +256,6 @@
 
                         <!-- Pain Point Dropdown -->
                         <div class="relative w-full" onclick="event.stopPropagation()">
-                            <!-- A11Y: Added aria-label -->
                             <select id="audit-issue" aria-label="Primary Website Frustration"
                                 class="w-full appearance-none bg-zinc-900 border border-white/10 rounded-xl px-4 py-3 md:px-6 md:py-4 text-white text-sm md:text-base focus:outline-none focus:border-blue-500 transition cursor-pointer pr-12">
                                 <option value="" disabled selected>What is your biggest frustration?</option>
@@ -271,7 +271,7 @@
                         </div>
 
                         <button onclick="runAudit()" id="audit-btn"
-                            class="w-full glow-button bg-white text-black font-bold py-3 md:py-4 rounded-xl text-base md:text-lg flex items-center justify-center gap-2 hover:bg-blue-600 hover:text-white transition-colors duration-300">
+                            class="w-full glow-button bg-white text-black font-bold py-3 md:py-4 rounded-xl text-base md:text-lg flex items-center justify-center gap-2 hover:bg-blue-600 hover:text-white transition-all duration-300">
                             <span>✨ Check My Website</span>
                         </button>
                         <p class="text-xs text-gray-500 text-center md:text-left italic">
@@ -655,8 +655,7 @@
                             Visitor Growth
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">Embod East
-                        Brisbane
+                    <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">Embod Wellness
                     </h3>
                     <p class="text-gray-400 leading-relaxed">Complete overhaul for a health & wellness brand focusing on
                         technical SEO and Core Web Vitals, resulting in a measurable increase in organic visitor
@@ -919,16 +918,7 @@
 
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
-            const body = document.body;
-
             menu.classList.toggle('hidden');
-
-            // Fix: Lock body scroll when menu is open
-            if (!menu.classList.contains('hidden')) {
-                body.style.overflow = 'hidden';
-            } else {
-                body.style.overflow = 'auto';
-            }
         }
 
         function togglePrivacyModal() {
@@ -947,7 +937,7 @@
             closeIcon.classList.toggle('hidden');
         }
 
-        async function callGemini(payload, retries = 5, delay = 1000) {
+        async function callGemini(payload, retries = 3, delay = 2000) { // Increased delay, reduced retries to avoid hammering
             const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
             for (let i = 0; i < retries; i++) {
                 try {
@@ -956,11 +946,24 @@
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(payload)
                     });
-                    if (!response.ok) throw new Error(`API: ${response.status}`);
+
+                    if (!response.ok) {
+                        // If 429, throw specific error to handle in UI, don't retry immediately if it's a hard limit, 
+                        // but for soft limits (RPM) backing off helps.
+                        if (response.status === 429) {
+                            throw new Error('API_429');
+                        }
+                        throw new Error(`API: ${response.status}`);
+                    }
+
                     const data = await response.json();
                     return data.candidates?.[0]?.content?.parts?.[0]?.text;
                 } catch (error) {
+                    // If it's the last retry or a specific error we shouldn't retry? 
+                    // Actually for 429 with backoff it might work.
                     if (i === retries - 1) throw error;
+
+                    // Wait before retrying
                     await new Promise(r => setTimeout(r, delay));
                     delay *= 2;
                 }
@@ -976,6 +979,9 @@
             const resultContainer = document.getElementById('audit-result-container');
             const errorContainer = document.getElementById('audit-error');
 
+            // Store original button content
+            const originalBtnContent = btn.innerHTML;
+
             if (!urlInput || !industryInput) {
                 errorContainer.textContent = "Please enter both your URL and Industry so I can give a precise audit.";
                 errorContainer.classList.remove('hidden');
@@ -983,7 +989,15 @@
             }
 
             errorContainer.classList.add('hidden');
+
+            // BUTTON ANIMATION: Press effect and Loading State
+            btn.classList.add('scale-95'); // Click press effect
+            setTimeout(() => btn.classList.remove('scale-95'), 150);
+
             btn.disabled = true;
+            btn.innerHTML = '<span>✨ Analyzing...</span>'; // Feedback text
+            btn.classList.add('animate-pulse', 'opacity-90'); // Pulse animation
+
             loader.classList.remove('hidden');
             resultContainer.innerHTML = '';
 
@@ -1001,15 +1015,16 @@
                 // Clean up any potential markdown code fences if the model adds them by mistake
                 const cleanHtml = result.replace(/```html/g, '').replace(/```/g, '');
 
+                // BACKGROUND FIX: Added specific gradient (from-white/5 to-blue-600/10) to ensure blue tint shows on mobile
                 resultContainer.innerHTML = `
-                    <div class="bg-white/5 p-5 md:p-8 rounded-[24px] md:rounded-[32px] border border-white/10 animate-fade-in">
-                        <div class="flex items-center gap-2 text-blue-400 font-bold mb-4 md:mb-6 text-xs tracking-widest uppercase border-b border-white/5 pb-4">
+                    <div class="md:bg-gradient-to-br md:from-white/5 md:to-blue-600/10 md:p-8 md:rounded-[32px] md:border md:border-white/10 animate-fade-in md:shadow-2xl">
+                        <div class="flex items-center gap-2 text-blue-400 font-bold mb-4 md:mb-6 text-xs tracking-widest uppercase md:border-b md:border-white/5 md:pb-4">
                             <i data-lucide="check-circle" class="w-4 h-4"></i> Strategy for ${industryInput} Website
                         </div>
                         <div class="prose prose-invert prose-sm md:prose-base max-w-none">
                             ${cleanHtml}
                         </div>
-                        <div class="mt-6 pt-6 border-t border-white/5 flex gap-4">
+                        <div class="mt-6 md:pt-6 md:border-t md:border-white/5 flex gap-4">
                             <a href="#contact-section" class="text-white bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded-xl font-bold text-sm transition inline-flex items-center gap-2 w-full justify-center md:w-auto">
                                 Book This Fix <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </a>
@@ -1018,11 +1033,18 @@
                 lucide.createIcons();
             } catch (err) {
                 console.error(err);
-                errorContainer.textContent = "I'm a bit busy right now. Please try again or message me directly!";
+                if (err.message.includes('429') || err.message.includes('API_429')) {
+                    errorContainer.textContent = "High traffic! The AI is currently overloaded. Please wait 1 minute and try again.";
+                } else {
+                    errorContainer.textContent = "I'm a bit busy right now. Please try again or message me directly!";
+                }
                 errorContainer.classList.remove('hidden');
             } finally {
+                // Restore button state
                 btn.disabled = false;
                 loader.classList.add('hidden');
+                btn.innerHTML = originalBtnContent;
+                btn.classList.remove('animate-pulse', 'opacity-90');
             }
         }
 
@@ -1059,7 +1081,11 @@
             } catch (err) {
                 const errorDiv = document.createElement('div');
                 errorDiv.className = "text-red-400 text-xs mt-1 p-2";
-                errorDiv.textContent = "Sorry, my brain is offline!";
+                if (err.message.includes('429')) {
+                    errorDiv.textContent = "AI busy (rate limit). Try again in a minute.";
+                } else {
+                    errorDiv.textContent = "Sorry, my brain is offline!";
+                }
                 history.appendChild(errorDiv);
             }
             history.scrollTop = history.scrollHeight;
