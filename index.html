@@ -72,10 +72,7 @@
             }
         }
 
-        section {
-            content-visibility: auto;
-            contain-intrinsic-size: 800px;
-        }
+        /* REMOVED section { content-visibility: auto; } to fix overlapping/dynamic height issues */
 
         .text-gradient {
             background: linear-gradient(to right, #4ade80, #3b82f6);
@@ -206,7 +203,7 @@
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="#audit-tool"
                     class="glow-button bg-blue-600 text-white px-5 py-2.5 md:px-10 md:py-4 rounded-xl font-bold text-sm md:text-lg w-full sm:w-auto text-center">
-                    ✨ Get a Free Website Review
+                    ✨ Get a Free Website Audit
                 </a>
                 <a href="#work"
                     class="glass text-white px-5 py-2.5 md:px-10 md:py-4 rounded-xl font-bold text-sm md:text-lg w-full sm:w-auto border border-white/10 hover:bg-white/5 transition text-center">
@@ -396,7 +393,7 @@
                     <span class="md:hidden">Practical Local Web Solutions</span>
                     <span class="hidden md:inline">A practical approach to local business websites</span>
                 </div>
-                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white leading-tight">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white leading-tight">
                     Who you are <span class="text-gradient">working with.</span>
                 </h2>
                 <p class="text-gray-400 text-lg leading-relaxed mb-6">
@@ -985,15 +982,15 @@
                 const cleanHtml = result.replace(/```html/g, '').replace(/```/g, '');
 
                 resultContainer.innerHTML = `
-                    <div class="bg-white/5 p-8 rounded-[32px] border border-white/10 animate-fade-in">
-                        <div class="flex items-center gap-2 text-blue-400 font-bold mb-6 text-xs tracking-widest uppercase border-b border-white/5 pb-4">
+                    <div class="bg-white/5 p-5 md:p-8 rounded-[24px] md:rounded-[32px] border border-white/10 animate-fade-in">
+                        <div class="flex items-center gap-2 text-blue-400 font-bold mb-4 md:mb-6 text-xs tracking-widest uppercase border-b border-white/5 pb-4">
                             <i data-lucide="check-circle" class="w-4 h-4"></i> Strategy for ${industryInput} Website
                         </div>
-                        <div class="prose prose-invert max-w-none">
+                        <div class="prose prose-invert prose-sm md:prose-base max-w-none">
                             ${cleanHtml}
                         </div>
                         <div class="mt-6 pt-6 border-t border-white/5 flex gap-4">
-                            <a href="#contact-section" class="text-white bg-blue-600 hover:bg-blue-500 px-6 py-2 rounded-lg font-bold text-sm transition inline-flex items-center gap-2">
+                            <a href="#contact-section" class="text-white bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded-xl font-bold text-sm transition inline-flex items-center gap-2 w-full justify-center md:w-auto">
                                 Book This Fix <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </a>
                         </div>
