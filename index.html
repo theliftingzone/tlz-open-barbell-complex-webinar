@@ -168,7 +168,7 @@
 
         <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu"
-            class="hidden md:hidden absolute top-20 left-0 w-full bg-black/95 backdrop-blur-xl border-b border-white/10 p-8 flex flex-col gap-6 text-center shadow-2xl h-screen z-40 transition-all">
+            class="hidden md:hidden absolute top-20 left-0 w-full bg-black/95 backdrop-blur-xl border-b border-white/10 p-8 flex flex-col gap-6 text-center shadow-2xl h-[calc(100vh-5rem)] z-40 transition-all overflow-y-auto">
             <a href="#about" onclick="toggleMobileMenu()"
                 class="text-gray-300 hover:text-white font-medium text-lg">About Me</a>
             <a href="#services" onclick="toggleMobileMenu()"
@@ -179,6 +179,12 @@
             <a href="#contact-section" onclick="toggleMobileMenu()"
                 class="bg-white text-black px-5 py-3 rounded-xl font-bold hover:bg-blue-500 hover:text-white transition mx-auto w-full max-w-xs">Work
                 With Me</a>
+
+            <!-- Explicit Close Button for better Mobile UX -->
+            <button onclick="toggleMobileMenu()"
+                class="mt-4 text-gray-500 hover:text-white flex items-center justify-center gap-2">
+                <i data-lucide="x" class="w-5 h-5"></i> Close Menu
+            </button>
         </div>
     </nav>
 
@@ -235,18 +241,21 @@
                     <div class="flex flex-col gap-4">
                         <div class="grid sm:grid-cols-2 gap-4">
                             <!-- URL Input -->
+                            <!-- A11Y: Added aria-label -->
                             <input id="audit-url" type="text" placeholder="Website URL (e.g. yoursite.com)"
                                 aria-label="Website URL"
                                 class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 md:px-6 md:py-4 text-white text-sm md:text-base focus:outline-none focus:border-blue-500 transition">
 
                             <!-- Industry Input -->
+                            <!-- A11Y: Added aria-label -->
                             <input id="audit-industry" type="text" placeholder="Industry (e.g. Plumber, Wellness, Cafe)"
                                 aria-label="Business Industry"
                                 class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 md:px-6 md:py-4 text-white text-sm md:text-base focus:outline-none focus:border-blue-500 transition">
                         </div>
 
                         <!-- Pain Point Dropdown -->
-                        <div class="relative w-full">
+                        <div class="relative w-full" onclick="event.stopPropagation()">
+                            <!-- A11Y: Added aria-label -->
                             <select id="audit-issue" aria-label="Primary Website Frustration"
                                 class="w-full appearance-none bg-zinc-900 border border-white/10 rounded-xl px-4 py-3 md:px-6 md:py-4 text-white text-sm md:text-base focus:outline-none focus:border-blue-500 transition cursor-pointer pr-12">
                                 <option value="" disabled selected>What is your biggest frustration?</option>
@@ -646,7 +655,8 @@
                             Visitor Growth
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">Embod Wellness
+                    <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">Embod East
+                        Brisbane
                     </h3>
                     <p class="text-gray-400 leading-relaxed">Complete overhaul for a health & wellness brand focusing on
                         technical SEO and Core Web Vitals, resulting in a measurable increase in organic visitor
@@ -909,7 +919,16 @@
 
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
+            const body = document.body;
+
             menu.classList.toggle('hidden');
+
+            // Fix: Lock body scroll when menu is open
+            if (!menu.classList.contains('hidden')) {
+                body.style.overflow = 'hidden';
+            } else {
+                body.style.overflow = 'auto';
+            }
         }
 
         function togglePrivacyModal() {
@@ -968,11 +987,10 @@
             loader.classList.remove('hidden');
             resultContainer.innerHTML = '';
 
-            // Updated Prompt: Injects the specific Industry for precision
-            // MOBILE FIX: Added instructions for concise output on mobile
-            const systemPrompt = "You are a specialized Local Business Website Strategist. Your goal is to help local service businesses get more calls and inquiries. Provide a strategic website audit based on the user's specific industry. Focus on Local SEO, Mobile Speed, and Conversion (getting calls). Important: Output your response in clean HTML format (no markdown, no code blocks). Use <h3 class='text-lg md:text-xl font-bold text-white mb-2 mt-4'> for headings. Use <ul class='list-none space-y-3 mb-6'> for lists. Use <li class='flex gap-3 items-start text-sm md:text-base'><span class='text-blue-400 mt-1'>➜</span><span> for list items (close with </span></li>). Use <p class='text-gray-400 mb-4 text-sm md:text-base'> for paragraphs. Limit the response to 3 concise, high-impact bullet points to ensure it fits well on mobile screens.";
+            // Updated Prompt: Now prioritizes the specific PAIN POINT over generic SEO advice
+            const systemPrompt = "You are a specialized Local Business Website Strategist. Your goal is to help local service businesses succeed online. CRITICAL INSTRUCTION: You must strictly address the user's 'Core Pain Point' identified in the prompt. If they say 'Hard to Edit', talk about ACF, custom dashboards, and ease of management. If they say 'Speed', talk about mobile optimization. Do not give generic SEO advice if it does not solve their specific complaint. Important: Output your response in clean HTML format (no markdown, no code blocks). Use <h3 class='text-lg md:text-xl font-bold text-white mb-2 mt-4'> for headings. Use <ul class='list-none space-y-3 mb-6'> for lists. Use <li class='flex gap-3 items-start text-sm md:text-base'><span class='text-blue-400 mt-1'>➜</span><span> for list items (close with </span></li>). Use <p class='text-gray-400 mb-4 text-sm md:text-base'> for paragraphs. Limit the response to 3 concise, high-impact bullet points.";
 
-            const userPrompt = `Audit Request for: ${urlInput}. Industry: ${industryInput}. Core Pain Point: ${issueSelect || "General Improvement"}. Suggest 3 actionable steps to fix this for a ${industryInput} business website.`;
+            const userPrompt = `Audit Request for: ${urlInput}. Industry: ${industryInput}. Core Pain Point: ${issueSelect || "General Improvement"}. Suggest 3 actionable steps to fix this specific pain point for a ${industryInput} business website.`;
 
             try {
                 const result = await callGemini({
