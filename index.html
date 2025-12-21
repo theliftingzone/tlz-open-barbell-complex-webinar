@@ -214,9 +214,9 @@
     </header>
 
     <!-- Gemini AI Audit Tool -->
-    <section id="audit-tool" class="py-16 md:py-24 px-6 relative bg-zinc-950/30">
+    <section id="audit-tool" class="py-16 md:py-24 px-4 md:px-6 relative bg-zinc-950/30">
         <div class="max-w-4xl mx-auto">
-            <div class="glass p-6 md:p-12 rounded-[30px] md:rounded-[40px] border-blue-500/30 relative overflow-hidden">
+            <div class="glass p-5 md:p-12 rounded-[24px] md:rounded-[40px] border-blue-500/30 relative overflow-hidden">
                 <div class="absolute -top-24 -right-24 w-64 h-64 bg-blue-600/20 blur-[80px] rounded-full"></div>
                 <div class="relative z-10 text-center md:text-left">
                     <div class="flex flex-col md:flex-row items-center justify-center md:justify-start gap-3 mb-6">
@@ -226,7 +226,8 @@
                         <h2 class="text-2xl md:text-3xl font-bold text-white">Instant Website Check for Local Businesses
                         </h2>
                     </div>
-                    <p class="text-gray-400 mb-8">See how your website performs for real local customers. Find out what
+                    <p class="text-gray-400 mb-8 text-sm md:text-base">See how your website performs for real local
+                        customers. Find out what
                         may be hurting your visibility, slowing your site down, or stopping people from contacting you.
                         This quick check highlights practical issues based on real local business websites.</p>
 
@@ -236,19 +237,18 @@
                             <!-- URL Input -->
                             <input id="audit-url" type="text" placeholder="Website URL (e.g. yoursite.com)"
                                 aria-label="Website URL"
-                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 md:px-6 md:py-4 text-white focus:outline-none focus:border-blue-500 transition">
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 md:px-6 md:py-4 text-white text-sm md:text-base focus:outline-none focus:border-blue-500 transition">
 
                             <!-- Industry Input -->
                             <input id="audit-industry" type="text" placeholder="Industry (e.g. Plumber, Wellness, Cafe)"
                                 aria-label="Business Industry"
-                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 md:px-6 md:py-4 text-white focus:outline-none focus:border-blue-500 transition">
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 md:px-6 md:py-4 text-white text-sm md:text-base focus:outline-none focus:border-blue-500 transition">
                         </div>
 
                         <!-- Pain Point Dropdown -->
                         <div class="relative w-full">
-                            <!-- A11Y: Added aria-label -->
                             <select id="audit-issue" aria-label="Primary Website Frustration"
-                                class="w-full appearance-none bg-zinc-900 border border-white/10 rounded-xl px-4 py-3 md:px-6 md:py-4 text-white focus:outline-none focus:border-blue-500 transition cursor-pointer pr-12">
+                                class="w-full appearance-none bg-zinc-900 border border-white/10 rounded-xl px-4 py-3 md:px-6 md:py-4 text-white text-sm md:text-base focus:outline-none focus:border-blue-500 transition cursor-pointer pr-12">
                                 <option value="" disabled selected>What is your biggest frustration?</option>
                                 <option value="General Improvement">I don't know what needs fixing</option>
                                 <option value="Low Loading Speed">My site is too slow</option>
@@ -276,7 +276,8 @@
                     </div>
 
                     <!-- Formatted Result Container -->
-                    <div id="audit-result-container" class="mt-8 text-gray-300 leading-relaxed text-left">
+                    <div id="audit-result-container"
+                        class="mt-8 text-gray-300 leading-relaxed text-left w-full overflow-visible">
                         <!-- Gemini content will be injected here with custom styling -->
                     </div>
 
@@ -771,7 +772,7 @@
                     </div>
 
                     <button type="submit"
-                        class="glow-button bg-blue-600 text-white font-bold py-4 md:py-6 rounded-2xl text-lg md:text-xl mt-4 w-full flex items-center justify-center gap-2 md:gap-3 hover:bg-blue-500 transition h-auto">
+                        class="glow-button bg-blue-600 text-white font-bold py-3 md:py-6 rounded-2xl text-lg md:text-xl mt-4 w-full flex items-center justify-center gap-2 md:gap-3 hover:bg-blue-500 transition h-auto">
                         <span class="md:hidden">Get Free Review</span>
                         <span class="hidden md:inline">Get a Free Website Review</span>
                         <i data-lucide="send" class="w-5 h-5 md:w-6 md:h-6"></i>
@@ -968,9 +969,9 @@
             resultContainer.innerHTML = '';
 
             // Updated Prompt: Injects the specific Industry for precision
-            const systemPrompt = "You are a specialized Local Business Website Strategist. Your goal is to help local service businesses get more calls and inquiries. Provide a strategic website audit based on the user's specific industry. Focus on Local SEO, Mobile Speed, and Conversion (getting calls). Important: Output your response in clean HTML format (no markdown, no code blocks). Use <h3> tags with Tailwind class 'text-xl font-bold text-white mb-2 mt-4' for headings. Use <ul class='list-none space-y-3 mb-6'> for lists. Use <li class='flex gap-3 items-start'><span class='text-blue-400 mt-1'>➜</span><span> for list items (close with </span></li>). Use <p class='text-gray-400 mb-4'> for paragraphs. Provide 3 specific, high-impact fixes.";
+            // MOBILE FIX: Added instructions for concise output on mobile
+            const systemPrompt = "You are a specialized Local Business Website Strategist. Your goal is to help local service businesses get more calls and inquiries. Provide a strategic website audit based on the user's specific industry. Focus on Local SEO, Mobile Speed, and Conversion (getting calls). Important: Output your response in clean HTML format (no markdown, no code blocks). Use <h3 class='text-lg md:text-xl font-bold text-white mb-2 mt-4'> for headings. Use <ul class='list-none space-y-3 mb-6'> for lists. Use <li class='flex gap-3 items-start text-sm md:text-base'><span class='text-blue-400 mt-1'>➜</span><span> for list items (close with </span></li>). Use <p class='text-gray-400 mb-4 text-sm md:text-base'> for paragraphs. Limit the response to 3 concise, high-impact bullet points to ensure it fits well on mobile screens.";
 
-            // This ensures the AI knows exactly what kind of business it is
             const userPrompt = `Audit Request for: ${urlInput}. Industry: ${industryInput}. Core Pain Point: ${issueSelect || "General Improvement"}. Suggest 3 actionable steps to fix this for a ${industryInput} business website.`;
 
             try {
@@ -979,6 +980,7 @@
                     systemInstruction: { parts: [{ text: systemPrompt }] }
                 });
 
+                // Clean up any potential markdown code fences if the model adds them by mistake
                 const cleanHtml = result.replace(/```html/g, '').replace(/```/g, '');
 
                 resultContainer.innerHTML = `
