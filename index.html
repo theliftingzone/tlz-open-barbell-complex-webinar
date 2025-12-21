@@ -30,10 +30,9 @@
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Tailwind Configuration (Content Scanning / Purge simulation) -->
+    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
-            // This defines where Tailwind looks for class names to generate styles
             content: ['./index.html', './**/*.js'],
             theme: {
                 extend: {
@@ -59,10 +58,9 @@
             overflow-x: hidden;
         }
 
-        /* PERFORMANCE FIX: Disable heavy blur on mobile, enable only on larger screens */
+        /* PERFORMANCE FIX: Disable heavy blur on mobile */
         .glass {
-            background: rgba(20, 20, 20, 0.8);
-            /* Solid fallback for mobile */
+            background: rgba(20, 20, 20, 0.9);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
@@ -74,11 +72,9 @@
             }
         }
 
-        /* PERFORMANCE FIX: Skip rendering off-screen content until scrolled to */
         section {
             content-visibility: auto;
             contain-intrinsic-size: 800px;
-            /* Approximate height of a section */
         }
 
         .text-gradient {
@@ -91,7 +87,6 @@
             box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             will-change: transform;
-            /* Hint to browser to optimize */
         }
 
         .glow-button:hover {
@@ -129,7 +124,6 @@
             animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -156,7 +150,6 @@
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
             <!-- Option 2: Image Logo -->
-            <!-- A11Y: Added alt text -->
             <img src="assets/logo.svg" alt="Drano Web Solutions Logo" class="h-8 w-auto" width="120" height="32">
 
             <!-- Desktop Menu -->
@@ -171,7 +164,6 @@
             </div>
 
             <!-- Mobile Menu Button -->
-            <!-- A11Y: Added aria-label -->
             <button onclick="toggleMobileMenu()" class="md:hidden text-white p-2" aria-label="Open Menu">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
@@ -213,11 +205,11 @@
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="#audit-tool"
-                    class="glow-button bg-blue-600 text-white px-6 py-3 md:px-10 md:py-4 rounded-xl font-bold text-base md:text-lg w-full sm:w-auto text-center">
+                    class="glow-button bg-blue-600 text-white px-5 py-2.5 md:px-10 md:py-4 rounded-xl font-bold text-sm md:text-lg w-full sm:w-auto text-center">
                     ✨ Get a Free Website Review
                 </a>
                 <a href="#work"
-                    class="glass text-white px-6 py-3 md:px-10 md:py-4 rounded-xl font-bold text-base md:text-lg w-full sm:w-auto border border-white/10 hover:bg-white/5 transition text-center">
+                    class="glass text-white px-5 py-2.5 md:px-10 md:py-4 rounded-xl font-bold text-sm md:text-lg w-full sm:w-auto border border-white/10 hover:bg-white/5 transition text-center">
                     View Local Business Projects
                 </a>
             </div>
@@ -245,13 +237,11 @@
                     <div class="flex flex-col gap-4">
                         <div class="grid sm:grid-cols-2 gap-4">
                             <!-- URL Input -->
-                            <!-- A11Y: Added aria-label -->
                             <input id="audit-url" type="text" placeholder="Website URL (e.g. yoursite.com)"
                                 aria-label="Website URL"
                                 class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 md:px-6 md:py-4 text-white focus:outline-none focus:border-blue-500 transition">
 
                             <!-- Industry Input -->
-                            <!-- A11Y: Added aria-label -->
                             <input id="audit-industry" type="text" placeholder="Industry (e.g. Plumber, Wellness, Cafe)"
                                 aria-label="Business Industry"
                                 class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 md:px-6 md:py-4 text-white focus:outline-none focus:border-blue-500 transition">
@@ -263,6 +253,7 @@
                             <select id="audit-issue" aria-label="Primary Website Frustration"
                                 class="w-full appearance-none bg-zinc-900 border border-white/10 rounded-xl px-4 py-3 md:px-6 md:py-4 text-white focus:outline-none focus:border-blue-500 transition cursor-pointer pr-12">
                                 <option value="" disabled selected>What is your biggest frustration?</option>
+                                <option value="General Improvement">I don't know what needs fixing</option>
                                 <option value="Low Loading Speed">My site is too slow</option>
                                 <option value="Low Conversion Rate">I need more customers/leads</option>
                                 <option value="Technical/Local SEO">I'm not showing up on Google</option>
@@ -288,8 +279,7 @@
                     </div>
 
                     <!-- Formatted Result Container -->
-                    <div id="audit-result-container"
-                        class="mt-8 text-gray-300 leading-relaxed overflow-hidden text-left">
+                    <div id="audit-result-container" class="mt-8 text-gray-300 leading-relaxed text-left">
                         <!-- Gemini content will be injected here with custom styling -->
                     </div>
 
@@ -310,7 +300,6 @@
                 startups, and teams that rely on their website to bring in real inquiries.</p>
 
             <div class="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-12 items-center">
-                <!-- SPEED: Added loading="lazy" and width/height to all logos to prevent layout shifts -->
 
                 <div
                     class="flex justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
@@ -394,7 +383,6 @@
                     <div
                         class="relative bg-zinc-900 rounded-[2rem] p-1 border border-white/10 overflow-hidden aspect-[4/3] flex items-center justify-center">
 
-                        <!-- SPEED: Added width/height and lazy loading -->
                         <img src="assets/me.webp" alt="Adrian Sembrano" width="600" height="450"
                             class="w-full h-full object-cover rounded-[1.8rem]" loading="lazy">
 
@@ -408,7 +396,7 @@
                     <span class="md:hidden">Practical Local Web Solutions</span>
                     <span class="hidden md:inline">A practical approach to local business websites</span>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white leading-tight">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white leading-tight">
                     Who you are <span class="text-gradient">working with.</span>
                 </h2>
                 <p class="text-gray-400 text-lg leading-relaxed mb-6">
@@ -597,7 +585,7 @@
 
                         <!-- Gradient Overlay: UPDATED to be subtle so image is visible -->
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 group-hover:opacity-60 transition duration-500">
+                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition duration-500">
                         </div>
 
                         <div
@@ -624,7 +612,7 @@
 
                         <!-- Gradient Overlay -->
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 group-hover:opacity-60 transition duration-500">
+                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition duration-500">
                         </div>
 
                         <div
@@ -651,7 +639,7 @@
 
                         <!-- Gradient Overlay -->
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 group-hover:opacity-60 transition duration-500">
+                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition duration-500">
                         </div>
 
                         <div
@@ -660,8 +648,7 @@
                             Visitor Growth
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">Embod East
-                        Brisbane
+                    <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">Embod Wellness
                     </h3>
                     <p class="text-gray-400 leading-relaxed">Complete overhaul for a health & wellness brand focusing on
                         technical SEO and Core Web Vitals, resulting in a measurable increase in organic visitor
@@ -680,7 +667,7 @@
 
                         <!-- Gradient Overlay -->
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 group-hover:opacity-60 transition duration-500">
+                            class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition duration-500">
                         </div>
 
                         <div
@@ -788,7 +775,7 @@
 
                     <button type="submit"
                         class="glow-button bg-blue-600 text-white font-bold py-4 md:py-6 rounded-2xl text-lg md:text-xl mt-4 w-full flex items-center justify-center gap-2 md:gap-3 hover:bg-blue-500 transition h-auto">
-                        <span class="md:hidden">Get Free Audit</span>
+                        <span class="md:hidden">Get Free Review</span>
                         <span class="hidden md:inline">Get a Free Website Review</span>
                         <i data-lucide="send" class="w-5 h-5 md:w-6 md:h-6"></i>
                     </button>
