@@ -14,10 +14,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Drano Web Solutions | Fast, clear, and high-trust websites that help local businesses get calls, inquiries, and real leads. Built with WordPress for flexibility and easy updates.">
+        content="Adrian | Fast, clear, and high-trust websites that help local businesses get calls, inquiries, and real leads. Built with WordPress for flexibility and easy updates.">
     <meta name="keywords"
-        content="Drano Web Solutions, local business websites, WordPress development, website design, website development">
-    <title>Drano Web Solutions | Local Business Websites that Drive Calls & Inquiries</title>
+        content="Adrian, local business websites, WordPress development, website design, website development">
+    <title>Adrian | Local Business Websites that Drive Calls & Inquiries</title>
 
     <!-- PERFORMANCE: Preconnect to font servers -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -108,6 +108,26 @@
             display: none;
         }
 
+        /* Typewriter Cursor */
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: #4ade80;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
         @keyframes pulse-slow {
 
             0%,
@@ -150,7 +170,7 @@
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
             <!-- Option 2: Image Logo -->
-            <img src="assets/logo.svg" alt="Drano Web Solutions Logo" class="h-8 w-auto" width="120" height="32">
+            <img src="assets/logo.svg" alt="Adrian Logo" class="h-8 w-auto" width="120" height="32">
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
@@ -201,13 +221,18 @@
             <div
                 class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6 md:mb-8">
                 <i data-lucide="layout" class="w-3 h-3 md:w-4 md:h-4"></i>
-                Fast, Clear, Contact-Ready Sites
+                High-Performance Web Development
             </div>
+
+            <!-- Updated Headline -->
             <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight mb-6 md:mb-8 leading-[1.1] text-white">
-                Websites that help local customers <span class="text-gradient">find you and contact you.</span>
+                Turn Local Searches into <br class="hidden md:block" />
+                <span class="text-gradient">Paying Customers.</span>
             </h1>
+
             <p class="text-lg md:text-xl text-gray-400 mb-8 md:mb-12 max-w-2xl mx-auto leading-relaxed">
-                Fast, mobile-first websites built to bring in calls, inquiries, and real local leads.
+                Fast, mobile-first websites built to bring in calls, inquiries, and real local leads for <strong>Service
+                    Businesses & SMBs</strong>.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="#audit-tool"
@@ -216,7 +241,7 @@
                 </a>
                 <a href="#work"
                     class="glass text-white px-5 py-2.5 md:px-10 md:py-4 rounded-xl font-bold text-sm md:text-lg w-full sm:w-auto border border-white/10 hover:bg-white/5 transition text-center">
-                    View Local Business Projects
+                    View Recent Projects
                 </a>
             </div>
         </div>
@@ -232,13 +257,13 @@
                         <div class="p-2 bg-blue-500/20 rounded-lg text-blue-400">
                             <i data-lucide="sparkles"></i>
                         </div>
-                        <h2 class="text-2xl md:text-3xl font-bold text-white">Instant Website Check for Local Businesses
+                        <h2 class="text-2xl md:text-3xl font-bold text-white">Instant Website Check for SMBs
                         </h2>
                     </div>
-                    <p class="text-gray-400 mb-8 text-sm md:text-base">See how your website performs for real local
-                        customers. Find out what
+                    <p class="text-gray-400 mb-8 text-sm md:text-base">See how your website performs for real customers.
+                        Find out what
                         may be hurting your visibility, slowing your site down, or stopping people from contacting you.
-                        This quick check highlights practical issues based on real local business websites.</p>
+                    </p>
 
                     <!-- Input Area -->
                     <div class="flex flex-col gap-4">
@@ -302,11 +327,12 @@
     <section class="py-12 border-y border-white/5 bg-zinc-950">
         <div class="max-w-7xl mx-auto px-6">
             <p class="text-center text-white text-lg font-bold uppercase tracking-widest mb-2">Trusted by local
-                businesses and growing teams</p>
-            <p class="text-center text-gray-500 text-sm font-medium mb-10 max-w-2xl mx-auto">Local service businesses,
+                businesses</p>
+            <p class="text-center text-gray-500 text-sm font-medium mb-10 max-w-2xl mx-auto">Service businesses,
                 startups, and teams that rely on their website to bring in real inquiries.</p>
 
             <div class="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-12 items-center">
+                <!-- SPEED: Added loading="lazy" and width/height to all logos to prevent layout shifts -->
 
                 <div
                     class="flex justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer">
@@ -407,7 +433,7 @@
                     Who you are <span class="text-gradient">working with.</span>
                 </h2>
                 <p class="text-gray-400 text-lg leading-relaxed mb-6">
-                    <strong class="text-white">Hi, I'm Adrian Sembrano.</strong> I help local businesses fix websites
+                    <strong class="text-white">Hi, I'm Adrian.</strong> I help local businesses fix websites
                     that are slow, confusing, or not bringing in inquiries. I am not here to upsell features or
                     overcomplicate things. The goal is simple: help local customers find you, trust you, and contact
                     you.
@@ -655,7 +681,8 @@
                             Visitor Growth
                         </div>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">Embod Wellness
+                    <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">Embod East
+                        Brisbane
                     </h3>
                     <p class="text-gray-400 leading-relaxed">Complete overhaul for a health & wellness brand focusing on
                         technical SEO and Core Web Vitals, resulting in a measurable increase in organic visitor
@@ -728,8 +755,8 @@
     <!-- Contact Form -->
     <section id="contact-section" class="py-16 md:py-32 px-6">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl md:text-5xl font-extrabold mb-8 tracking-tighter text-white">If your website is not
-                helping local customers contact you, it needs fixing.</h2>
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-8 tracking-tighter text-white">The AI tool finds the
+                basics. I fix the root cause.</h2>
             <p class="text-xl text-gray-400 mb-16 leading-relaxed max-w-2xl mx-auto">
                 Tell me what your business does and who you serve locally. I will reply with a clear recommendation
                 within 24 hours.
@@ -799,8 +826,8 @@
                     <!-- FOOTER LOGO -->
                     <!-- A11Y: Added alt text -->
                     <a href="#" class="block mb-6 hover:opacity-80 transition" aria-label="Home">
-                        <img src="assets/logo.svg" alt="Drano Web Solutions" class="h-10 w-auto mx-auto md:mx-0 mb-6"
-                            width="150" height="40">
+                        <img src="assets/logo.svg" alt="Adrian" class="h-10 w-auto mx-auto md:mx-0 mb-6" width="150"
+                            height="40">
                     </a>
 
                     <p class="text-gray-500 leading-relaxed max-w-sm mx-auto md:mx-0">
@@ -829,7 +856,7 @@
 
             <div
                 class="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-white/5 text-sm text-gray-600">
-                <p>&copy; <span id="year"></span> Drano Web Solutions. All rights reserved.</p>
+                <p>&copy; <span id="year"></span> Adrian. All rights reserved.</p>
                 <div class="flex items-center gap-4">
                     <!-- WhatsApp (Linked via Icon Only - Hidden from simple text scrapers) -->
                     <!-- A11Y: Added aria-label -->
@@ -866,7 +893,7 @@
                     <p>Last Updated: <span id="privacy-date"></span></p>
 
                     <h4 class="text-white font-bold mt-4 mb-2">1. Introduction</h4>
-                    <p>Welcome to Drano Web Solutions. I respect your privacy and am committed to protecting your
+                    <p>Welcome to Adrian's Portfolio. I respect your privacy and am committed to protecting your
                         personal data. This privacy policy will inform you as to how I look after your personal data
                         when you visit my website and tell you about your privacy rights.</p>
 
@@ -912,13 +939,62 @@
             }
         });
 
+        // Typewriter Effect
+        const words = ["Contractors", "Clinics", "Law Firms", "Local Brands"];
+        let i = 0;
+        let timer;
+
+        function typeWriter() {
+            const heading = document.getElementById("typewriter");
+            const currentWord = words[i];
+            let j = 0;
+            let isDeleting = false;
+
+            function loop() {
+                heading.innerHTML = currentWord.substring(0, j);
+
+                if (!isDeleting && j < currentWord.length) {
+                    j++;
+                    timer = setTimeout(loop, 100);
+                } else if (isDeleting && j > 0) {
+                    j--;
+                    timer = setTimeout(loop, 50);
+                } else {
+                    isDeleting = !isDeleting;
+                    if (!isDeleting) {
+                        i = (i + 1) % words.length;
+                        timer = setTimeout(typeWriter, 500); // Pause before typing next word
+                        return;
+                    }
+                    timer = setTimeout(loop, 1500); // Pause at end of word
+                }
+            }
+            loop();
+        }
+
+        // Start Typewriter when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            if (document.getElementById("typewriter")) {
+                typeWriter();
+            }
+        });
+
         // Set Dynamic Year and Date
         document.getElementById('year').textContent = new Date().getFullYear();
         document.getElementById('privacy-date').textContent = new Date().toLocaleDateString();
 
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
+            const body = document.body;
+
             menu.classList.toggle('hidden');
+
+            // Fix: Lock body scroll when menu is open
+            if (!menu.classList.contains('hidden')) {
+                body.style.overflow = 'hidden';
+            } else {
+                body.style.overflow = 'auto';
+            }
         }
 
         function togglePrivacyModal() {
